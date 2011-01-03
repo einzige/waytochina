@@ -4,14 +4,20 @@ class Controller_Admin_Session extends Controller_Haml
 {
     public $template = 'layouts/login';
 
+    public function action_index()
+    {
+        $this->request->redirect('/admin/session/login');
+    }
+
     public function action_login()
     {
         Auth::instance()->logout(); 
  
         $this->template->title = 'Вход в систему управления сайтом';
-        $this->template->content = View::factory('admin/login')
-            ->bind('user',   $user)
-            ->bind('errors', $errors);
+        $this->template->content = Haml::factory('admin/session/login')->bind('user', $user);
+
+        $this->template->bind('errors', $errors);
+        $this->template->bind('messages', $messages);
  
         if ($_POST)
         {
@@ -19,10 +25,11 @@ class Controller_Admin_Session extends Controller_Haml
 
             if ( ! Auth::instance()->logged_in() )
             {
-                $errors = array('Ошибка. Вы ввели неверный логин/пароль.');
+                $messages = array('Ошибка. Вы ввели неверный логин/пароль.');
                 return;
             }
  
+            Session::instance()->set('messages', array('Вы успешно вошли в панель управления'));
             $this->request->redirect('/admin');
         }
     }
@@ -32,7 +39,7 @@ class Controller_Admin_Session extends Controller_Haml
         Auth::instance()->logout();
         Cookie::delete('user');
  
-        $this->request->redirect('/admin/login');
+        $this->request->redirect('/admin/session/login');
     }
 
     public function action_init()

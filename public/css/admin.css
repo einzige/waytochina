@@ -1,0 +1,119 @@
+* {
+    color: #333;   
+    font-family: Verdana;
+    font-size: 13px;
+}
+
+body {
+    background: #F0F0F0;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    color: #AA0000;
+    font-size: 28px;
+    font-weight: normal;
+    padding: 10px;
+    margin: 0;
+}
+
+#content {
+    padding: 10px;
+}
+
+/* __________ MESSAGES ___________ */
+
+.message_box {
+    color: white;
+    background: #CEEDC0;
+    border: #A7DE8E solid 1px;
+    width: 10px;
+    height: 10px;
+    min-width: 500px;
+    min-height: 40px;
+    margin: 20px 20px 20px 0;
+}
+
+.message_box ul {
+    padding-left: 20px;
+}
+
+.message_box ul li {
+    color: #004400;
+}
+
+
+/* __________ ERRORS ____________ */
+
+.error_box {
+    color: white;
+    background: #EDC0C8;
+    border: #EB7F91 solid 1px;
+    width: 10px;
+    height: 10px;
+    min-width: 500px;
+    min-height: 40px;
+    margin: 20px 20px 20px 0;
+}
+
+.error_box ul {
+    padding-left: 20px;
+}
+
+.error_box ul li {
+    color: #AA0000;
+}
+
+/* ___________ INPUTS ___________ */
+
+input[type="text"], input[type="password"] {
+    font-size: 17px;
+    font-style: italic;
+}
+
+input[type="submit"] {
+    min-width: 120px;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 17px;
+    color: #555;
+}
+
+/* ____________ MENUS ____________ */
+
+#menu {
+    margin: 0 auto;
+    background: #E4E4E4;
+    padding: 10px;
+    color: black;
+    min-height: 20px;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu ul li {
+    float: left;
+    padding: 0px 18px 0px 18px;
+    border-bottom: 3px solid gray;
+    margin-right: 1px;
+}
+
+#menu ul li:hover {
+    background: none;
+    border-bottom: 3px solid red;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#menu ul li a:hover {
+}

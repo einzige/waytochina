@@ -1,2 +1,33 @@
-%h2 Admin
-%div= $content
+!!! Strict
+%html{:lang => "ru", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title= isset($title) ? $title . ' | WayToChina.org' : 'Админ. панель | WayToChina.org'
+
+    = html::style('public/css/admin.css')
+    = html::script('public/js/jquery.js')
+
+  %body
+    #menu
+      %ul
+        %li= html::anchor('/admin/business', 'Бизнес в Китае')
+        %li= html::anchor('/admin/business', 'Образование в Китае')
+        %li= html::anchor('/admin/business', 'Услуги перевода')
+        %li= html::anchor('/admin/business', 'Вопросы')
+        %li= html::anchor('/admin/business', 'Заявки')
+
+    - if(isset($errors) && $errors)
+      .error_box
+        %ul
+          - foreach($errors as $error)
+            %li= $error
+    - if(isset($messages) && $messages)
+      .message_box
+        %ul
+          - foreach($messages as $message)
+            %li= $message
+
+    - if(isset($title))
+      %h2= $title
+
+    #content= $content

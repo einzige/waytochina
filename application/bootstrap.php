@@ -76,19 +76,20 @@ Kohana::$config->attach(new Kohana_Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
+	 'auth'       => MODPATH.'auth',       // Basic authentication
+      // 'cache'      => MODPATH.'cache',      // Caching with multiple backends
+      // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	 'database'   => MODPATH.'database',   // Database access
 	 'image'      => MODPATH.'image',      // Image manipulation
 	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	 'oauth'      => MODPATH.'oauth',      // OAuth authentication
          'pagination' => MODPATH.'pagination', // Paging of results
          'editor'     => MODPATH.'editor',
+         'temp'       => MODPATH.'temp',
          'phamlp'     => MODPATH.'haml'
 
-	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+      // 'unittest'   => MODPATH.'unittest',   // Unit testing
+      // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
 
 /**
@@ -97,9 +98,9 @@ Kohana::modules(array(
 $langs 		= Kohana::config('appconf.lang_uri_abbr');
 $default_lang 	= Kohana::config('appconf.language_abbr');
 $lang_ignore	= Kohana::config('appconf.lang_ignore');
-$langs_abr 	= implode('|',array_keys($langs)) ;
-if(!empty($langs_abr))
-	$langs_abr .= '|' . $lang_ignore;
+$langs_abr 	= implode('|', array_keys($langs)) ;
+
+if( ! empty($langs_abr)) $langs_abr .= '|' . $lang_ignore;
  
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of

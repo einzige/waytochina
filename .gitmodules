@@ -25,3 +25,6 @@
 [submodule "modules/haml"]
 	path = modules/haml
 	url = git://github.com/fredwu/kohana-phamlp.git
+[submodule "modules/auth"]
+	path = modules/auth
+	url = git://github.com/kohana/auth.git

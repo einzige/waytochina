@@ -1,0 +1,11 @@
+= Form::open('/admin/session/login', array("method" => "post"))
+  %table
+    %tr
+      %td= form::label('username', 'Логин: ')
+      %td= form::input('username')
+    %tr
+      %td= form::label('password', 'Пароль: ')
+      %td= form::password('password')
+    %tr
+      %td
+      %td= form::submit('commit', 'войти')

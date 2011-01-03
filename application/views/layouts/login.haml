@@ -1,2 +1,24 @@
-%h2 login here
-%div= $content
+!!! Strict
+%html{:lang => "ru", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Админ. панель  |  WayToChina.org
+
+    = html::style('public/css/admin')
+    = html::script('public/js/jquery')
+
+  %body
+    - if(isset($errors) && $errors)
+      .error_box
+        %ul
+          - foreach($errors as $error)
+            %li= $error
+    - if(isset($messages) && $messages)
+      .message_box
+        %ul
+          - foreach($messages as $message)
+            %li= $message
+
+    %h2 Вход в систему управления
+    #content= $content
+
