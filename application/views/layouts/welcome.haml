@@ -1,0 +1,81 @@
+!!! Strict
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "68b5960c88c25e8a", :name => "yandex-verification"}/
+    %title Все о Китае  |  WayToChina.org
+
+    = html::style('public/css/welcome')
+    = html::script('public/js/jquery')
+
+    -# Swap images on hover right menu links
+    :javascript
+      $(document).ready(function(){
+        $('#menu_wrapper a').hover(function(){
+          $('#splash_images img').hide();
+          $('#' + $(this).attr('rel')).show();
+        });
+      });
+
+  %body
+    #wrapper
+      #header 
+        .logo= html::anchor('/', '')
+        .languages
+          %ul.languages
+            %li.ru.active RU
+            %li.en= html::anchor('/', 'EN')
+            %li.cn= html::anchor('/', 'CN')
+  
+          = html::anchor('/', i18n::get('Контакты'))
+        .clear
+
+      #content
+        .splash
+          #menu_wrapper 
+            %a{:href => '#', :rel => 'big1'}
+              %h1= i18n::get('Бизнес в Китае')
+              %p=  i18n::get('Здесь надежные партнеры и выгодные предложения')
+            %a{:href => '#', :rel => 'big2'}
+              %h1= i18n::get('Образование в Китае')
+              %p=  i18n::get('Увлекательная учеба и перспективное будущее')
+            %a{:href => '#', :rel => 'big3'}
+              %h1= i18n::get('Услуги перевода')
+              %p=  i18n::get('Профессионально. Оперативно. Мобильно')
+            %a{:href => '#', :rel => 'big4'}
+              %h1= i18n::get('Блог о Китае')
+              %p=  i18n::get('Город, люди, события')
+            %a{:href => '#', :rel => 'big5'}
+              %h1= i18n::get('Ваш вопрос о Китае')
+              %p=  i18n::get('Мы открыты к диалогу! Спрашивайте!')
+
+          #splash_images
+            = html::image('/public/images/layouts/welcome/splash/big1.jpg', array('id' => 'big1'))
+            = html::image('/public/images/layouts/welcome/splash/big2.jpg', array('id' => 'big2'))
+            = html::image('/public/images/layouts/welcome/splash/big3.jpg', array('id' => 'big3'))
+            = html::image('/public/images/layouts/welcome/splash/big4.jpg', array('id' => 'big4'))
+            = html::image('/public/images/layouts/welcome/splash/big5.jpg', array('id' => 'big5'))
+      .clear
+
+      .weather_block
+        = Request::factory('/weather/russia_widget')->execute()
+        = Request::factory('/weather/china_widget')->execute()
+        = Request::factory('/converter/widget')->execute()
+      .clear
+
+      #footer
+        .links
+          = html::anchor('/', '"' . i18n::get("Мост в Китай") . '"')
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', i18n::get('О нас'))
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', i18n::get('Контакты'))
+          %br
+          = '&copy;'
+          = html::anchor('/', 'www.waytochina.org')
+        .sections
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Образование в Китае, учеба в Китае')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Перевод с китайского')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Бизнес в Китае')))

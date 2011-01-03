@@ -1,0 +1,319 @@
+body {
+    color: #605E5D;
+    font-family: Verdana,Arial,Georgia,"Times New Roman",Times,serif;
+    font-size: 1.2em;
+}
+
+.clear{
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+#wrapper{
+    width: 783px;
+    margin: 30px auto 30px;
+}
+
+.logo a{
+    width: 178px;
+    height: 53px;
+    background: url(/public/images/logo.jpg);
+    float: left;
+}
+
+a {
+    font-size: 13px;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font: 2em Verdana,Arial,Georgia,Helvetica,sans-serif;
+    padding: 6px 0 4px;
+    margin: 0px;
+}
+
+p {
+    margin: 0;
+}
+
+/* __________  MENU  ___________ */
+
+.splash {
+    padding: 30px 0;
+}
+
+#menu_wrapper {
+    float: right;
+    width: 300px;
+}
+
+#menu_wrapper a {
+    background: none repeat scroll 0 0 #F3F2F1;
+    border-bottom: 1px solid #FFFFFF;
+    display: block;
+    height: 80px;
+    padding: 0 0 0 20px;
+    text-decoration: none;
+}
+
+#menu_wrapper a:hover {
+    background: #DDD;
+}
+
+#menu_wrapper a h1 {
+    color: #0A48C5;
+    font-size: 23px;
+}
+
+#menu_wrapper a p {
+    color: #605E5D;
+    font-size: 1em;
+    padding: 0 10px 0 0;
+    text-decoration: none;
+}
+
+#splash_images {
+    height: 405px;
+    overflow: hidden;
+    width: 480px;
+}
+
+/* __________ LANGUAGES _________ */
+
+div.languages {
+    float: right;
+    margin-top: 30px;
+}
+
+div.languages a {
+    float: right;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+div.languages ul {
+    float: left;
+    margin-right: 10px;
+}
+
+ul.languages {
+    margin: 0px;
+    padding: 0px;
+    height: 19px;
+}
+
+ul.languages li {
+    display: block;
+    float: left;
+    height: 16px;
+    padding: 3px 0 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    width: 30px;
+}
+
+ul.languages li a {
+    color: #0A48C5;
+    display: block;
+    float: left;
+    font-size: 10px;
+    height: 16px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0px;
+    width: 30px
+}
+
+ul.languages li.ru {
+    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.en {
+    background: url("/public/images/languages/en.jpg") no-repeat scroll left top transparent;
+    width: 32px;
+}
+
+ul.languages li.cn {
+    background: url("/public/images/languages/cn.jpg") no-repeat scroll left top transparent;
+    width: 36px;
+}
+
+ul.languages li.ru:hover {
+    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.en:hover {
+    background: url("/public/images/languages/en_active.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.cn:hover {
+    background: url("/public/images/languages/cn_active.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages a:hover {
+    color: white;
+}
+
+
+/* __________ WEATHER __________ */
+ 
+.weather_block{}
+.weather_russia, .weather_china { 
+    background: url(/public/images/weather/under_weather.jpg) no-repeat left top; 
+    width: 220px; height: 175px; 
+    float: left; 
+    margin-right: 0px; margin-bottom: 30px;
+}
+.weather_block .weather_russia, .weather_block .weather_china { 
+    background: url(/public/images/weather/under_weather.jpg) no-repeat left top; 
+    width: 220px; height:125px; 
+    float: left; 
+    margin-right: 20px; margin-bottom:30px;
+}
+.weather_russia h2, .weather_china h2, .converter h2{ 
+    color: #3c3a3a; 
+    font: bold 14px Verdana, Arial, Helvetica, sans-serif; 
+    padding: 6px 0 6px 0px; 
+    text-align: center;
+    margin: 0px;
+}
+.weather_russia .forecast , .weather_china .forecast { 
+    padding: 6px 10px 0px 20px;
+}
+.weather_russia .forecast .one, .weather_china .forecast .one { 
+    float: left; 
+    font: normal 17px Verdana, Arial, Helvetica, sans-serif; 
+    color: #4b0082;
+} 
+.weather_russia .forecast .one div, .weather_china .forecast .one div { 
+    color: #605e5d;
+}
+.weather_russia .forecast .two, .weather_china .forecast .two { 
+    float: left; 
+    padding: 7px 0 0 10px;
+} 
+.weather_russia .forecast .three, .weather_china .forecast .three { 
+    float: left;
+    font-size: 11px; 
+    padding: 7px 0 0 10px;
+} 
+.weather_russia .another, .weather_china .another { 
+    text-align: center; 
+    font: normal 1em Verdana, Arial, Helvetica, sans-serif; 
+}
+
+/* ___________ CURRENCY CONVERTER ___________ */
+
+.converter { 
+    background: url(/public/images/converter/under_converter.jpg) no-repeat left top; 
+    width: 302px; height: 125px; 
+    float: left; 
+    font-size: 11px;
+}
+.converter label {
+    float: left;
+    padding: 6px 5px 5px 5px;
+}
+.converter input {
+    float: left;
+    width: 75px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+.converter_in { 
+    background: url(/public/images/weather/under_weather.jpg) no-repeat left top; 
+    width: 220px; height: 125px;
+}
+
+.converter_select_block {
+    padding: 10px 0 5px 50px;
+    clear: both;
+}
+
+.converter select {
+    float: left;
+    font-size: 11px;
+}
+
+.converter .arrow {
+    float: left;
+    margin: 2px 12px 0;
+}
+
+.converter .out {
+    padding-top: 2px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.converter .out p{
+    float: left;
+}
+
+.converter .button{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.converter .button a{
+    margin: 0 auto;
+}
+
+/* __________ FOOTER __________ */
+
+#footer {
+    border-top: 1px solid #C8C8C8;
+    font-size: 12px;
+    line-height: 1.5;
+    padding-top: 10px;
+    height: 40px;
+}
+
+#footer a {
+    font-size: 10px;
+}
+
+#footer .text {
+    line-height: 1.5;
+    padding: 0 0 15px;
+}
+
+#footer .links {
+    float: left;
+    width: 240px;
+}
+
+#footer .links a {
+    color: #0A48C5;
+    text-decoration: none;
+}
+
+#footer .copyrights {
+    float: right;
+    width: 170px;
+}
+
+#footer .sections {
+    float: left;
+    padding: 0;
+    text-align: center;
+    width: 215px;
+}
+
+#footer .sections a {
+    color: #0A48C5;
+    text-decoration: none;
+}

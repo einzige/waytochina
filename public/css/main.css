@@ -1,0 +1,294 @@
+html {
+    font-size: 62.5%;
+}
+
+body, input, form, img, h1, h2, h3, h4, h5, h6, ul, ol, li, td, p, fieldset, dt, dd, dl {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #333333;
+    font-family: Verdana,arial,"Times New Roman",Times,serif;
+    font-size: 1.3em;
+}
+
+p {
+    line-height: 1.3;
+    padding: 2px 0 10px;
+}
+
+a {
+    color: #0A48C5;
+    text-decoration: none;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 20px auto 30px;
+}
+
+.logo a{
+    width: 178px;
+    height: 53px;
+    background: url(/public/images/logo.jpg);
+    float: left;
+}
+
+.clear{
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+/* __________ MENU __________ */
+
+ul.top_menu {
+    padding-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 45px;
+}
+
+ul.top_menu li a {
+    padding-top: 13px;
+    background: url("/public/images/menu/top_menu.png") no-repeat scroll right -45px transparent;
+    color: #686766;
+    display: block;
+    float: left;
+    height: 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+}
+
+ul.top_menu li a:hover {
+    background: url("/public/images/menu/top_menu.png") no-repeat scroll right -90px transparent;
+    color: #FFF;
+}
+
+ul.top_menu li.last a {
+    background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -45px transparent;
+}
+ul.top_menu li.first a {
+    background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -45px transparent;
+}
+
+ul.top_menu li.first a:hover {
+    background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -90px transparent;
+    color: white;
+}
+
+ul.top_menu li.last a:hover {
+    background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -90px transparent;
+    color: white;
+}
+
+/* __________ LANGUAGES _________ */
+
+div.languages {
+    float: right;
+    margin-top: 30px;
+}
+
+div.languages a {
+    float: right;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+div.languages ul {
+    float: left;
+    margin-right: 10px;
+}
+
+ul.languages {
+    margin: 0px;
+    padding: 0px;
+    height: 19px;
+}
+
+ul.languages li {
+    display: block;
+    float: left;
+    height: 16px;
+    padding: 3px 0 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    width: 30px;
+}
+
+ul.languages li a {
+    color: #0A48C5;
+    display: block;
+    float: left;
+    font-size: 10px;
+    height: 16px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0px;
+    width: 30px
+}
+
+ul.languages li.ru {
+    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.en {
+    background: url("/public/images/languages/en.jpg") no-repeat scroll left top transparent;
+    width: 32px;
+}
+
+ul.languages li.cn {
+    background: url("/public/images/languages/cn.jpg") no-repeat scroll left top transparent;
+    width: 36px;
+}
+
+ul.languages li.ru:hover {
+    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.en:hover {
+    background: url("/public/images/languages/en_active.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages li.cn:hover {
+    background: url("/public/images/languages/cn_active.jpg") no-repeat scroll left top transparent;
+}
+
+ul.languages a:hover {
+    color: white;
+}
+
+/* __________ BANNER __________ */
+
+.top_banner {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.top_banner .left {
+    background: url("/public/images/banner/left.jpg") no-repeat scroll left center transparent;
+    float: left;
+    height: 110px;
+    width: 398px;
+}
+
+.top_banner .left h1 {
+    color: #1FA50D;
+    padding: 20px 0 0 20px;
+}
+
+/* __________ CONTENT __________ */
+
+#content {
+    padding: 20px 0 30px;
+}
+
+/* __________ FOOTER __________ */
+
+#footer {
+    border-top: 1px solid #C8C8C8;
+    font-size: 10px;
+    line-height: 1.5;
+    padding-top: 10px;
+    height: 40px;
+}
+
+#footer a {
+    font-size: 11px;
+}
+
+#footer .text {
+    line-height: 1.5;
+    padding: 0 0 15px;
+}
+
+#footer .links {
+    float: left;
+    width: 240px;
+}
+
+#footer .links a {
+    color: #0A48C5;
+    text-decoration: none;
+}
+
+#footer .copyrights {
+    float: right;
+    width: 170px;
+}
+
+#footer .sections {
+    float: left;
+    padding: 0;
+    text-align: center;
+    width: 250px;
+}
+
+#footer .sections a {
+    color: #0A48C5;
+    text-decoration: none;
+}
+
+
+/* __________ NOT MINE _____________ */
+
+html { font-size: 62.5%;}
+ 
+body { background:#ffffff; font-size: 1.3em; font-family: Verdana, arial, "Times New Roman", Times, serif; color: #333333;}
+body, input, form, img, h1, h2, h3, h4, h5, h6, ul, ol, li, td, p, fieldset, dt, dd, dl{margin:0; padding:0}
+table {border-collapse: collapse; }
+td {vertical-align: top;}
+
+a {color: #0a48c5;   text-decoration: none;}
+a:hover {color: #0a48c5;  text-decoration: underline;}
+a.r, a.r:hover {color:#ff0000;}
+
+ul, li {list-style:none;}
+
+img { border:none;}
+
+.tab100 {width:100%;}
+.tab1000 {width:1000px;}
+.tab50 {width:50%;}
+
+.nowrap {white-space:nowrap;}
+p {padding:2px 0 10px 0; line-height:1.3;}
+
+.td50 {width:50%;}
+h1 { /*color:#1fa50d;*/ font: normal 2.5em Verdana, Trebuchet MS, arial, Helvetica, sans-serif; padding:20px 0 0px 20px; line-height:1;}
+h2 { color:#010101; font: normal 2.2em Verdana, arial, Helvetica, sans-serif; padding:0px 0 10px 0px; position:relative;}
+h2.underh2 {font: italic 1.4em Verdana, arial, Helvetica, sans-serif; color:#4e4e4e;}
+h3 { color:#010101; font: normal 1.3em Verdana, arial, Helvetica, sans-serif;padding:20px 0 8px 0px;}
+h4 { color:#010101; font: normal 1.1em Verdana, arial, Helvetica, sans-serif;padding:20px 0 8px 0px;}
+ #cn{display:none}
+h3 a{font-weight:normal;}
+ 
+.abs {position:absolute;}
+.rel{position:relative; top:0; left:0;}
+.cent{text-align:center;}
+.bot{vertical-align: bottom;}
+.mid{vertical-align: middle;}
+.bold{ font-weight: bold;}
+.left{ text-align: left;}
+.right{ text-align: right;}
+.clear {clear:both; height: 0; overflow: hidden;}
+.red {border:1px solid red;}
+
+.flright{ float: right;}
+.flleft{ float: left;}
+
+.padt10 {padding-top:10px;}
+.padt15 {padding-top:15px;}
+.padt20 {padding-top:20px;}
+.padt30 {padding-top:30px;}
+.padt50 {padding-top:50px;}
+.padl20 {padding-left:20px;}
+.padl10 {padding-left:10px;}
+.padl5 {padding-left:5px;}
+

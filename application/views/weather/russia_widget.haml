@@ -1,0 +1,11 @@
+.weather_russia
+  %h2= i18n::get('Погода в городах России')
+  .forecast
+    .one
+      = i18n::get($forecast['name'])
+      %div= $forecast['temperature'] . '°C'
+    .two= html::image(Helper_Weather::state_image_path($forecast['pic']))
+    .three= $forecast['state']
+    .clear
+  .another
+    %a{:href => "/weather/russia/"}= i18n::get('а в других городах?')

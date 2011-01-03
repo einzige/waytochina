@@ -1,0 +1,71 @@
+:javascript
+
+  var usd   = #{$exchange_rates['usd']};
+  var yuan  = #{$exchange_rates['yuan']};
+  var euro  = #{$exchange_rates['euro']};
+  var ruble = 1;
+  
+  var in_rate  = yuan;
+  var out_rate = ruble;
+
+  function convert()
+  {
+      var how_much = $('[name="money"]').val();
+      $('#out').html( (how_much * in_rate / out_rate).toFixed(2) );
+
+      switch($('[name="out_currency"]').val())
+      {
+        case 'ruble':
+            $('#out_currency').html('рублей');
+            break;
+        case 'euro':
+            $('#out_currency').html('евро');
+            break;
+        case 'usd':
+            $('#out_currency').html('долларов');
+            break;
+        case 'yuan':
+            $('#out_currency').html('юаней');
+            break;
+      }
+      return false;
+  }
+
+  $('document').ready(function()
+  {
+    in_rate  = eval($('[name="in_currency"]').val());
+    out_rate = eval($('[name="out_currency"]').val());
+
+    $('[name="in_currency"]').change(function(){
+      in_rate = eval($(this).val());
+    });
+    $('[name="out_currency"]').change(function(){
+      out_rate = eval($(this).val());
+    });
+
+    $('.converter .button').click(function() {return convert();});
+
+    convert();
+  });
+
+.converter
+  %h2= i18n::get('Конвертор валют')
+
+  .converter_select_block
+    = Form::select('in_currency', array('yuan' => 'Юани', 'ruble' => 'Рубли', 'euro' => 'Евро', 'usd' => 'Доллары'), 'yuan')
+    .arrow= html::image('/public/images/converter/arrow.gif')
+    = Form::select('out_currency', array('yuan' => 'Юани', 'ruble' => 'Рубли', 'euro' => 'Евро', 'usd' => 'Доллары'), 'ruble')
+    .clear
+
+  .in_out
+    = Form::label('money', i18n::get('Сумма') . ':')
+    = Form::input('money', '1')
+    .arrow= html::image('/public/images/converter/arrow.gif')
+    .out
+      %p#out= $exchange_rates['yuan']
+      %p= '&nbsp;'
+      %p#out_currency рублей
+    .clear
+
+  .button= html::anchor('#', i18n::get('Конвертировать'))
+

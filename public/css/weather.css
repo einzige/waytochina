@@ -1,0 +1,32 @@
+.cities_wrapper {
+    padding-left: 70px;
+}
+
+.city {
+    float: left;
+    height: 150px;
+    margin-right: 20px;
+    width: 280px;
+}
+
+.city img {
+    padding-right: 10px;
+    float: left;
+}
+
+.city img.state{
+    clear: both;
+    max-height: 24px;
+}
+
+.city h3 {
+    padding-top: 0;
+}
+
+.city p {
+    font-size: 1.3em;
+}
+
+.city span {
+    padding-left: 130px;
+}

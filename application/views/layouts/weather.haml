@@ -1,0 +1,64 @@
+!!! Strict
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "68b5960c88c25e8a", :name => "yandex-verification"}/
+    %title= isset($title) ? $title . ' | WayToChina.org' : 'WayToChina.org'
+
+    = html::style('public/css/main')
+    = html::style('public/css/weather')
+    = html::script('public/js/jquery')
+
+  %body
+    #wrapper
+      #header 
+        .logo= html::anchor('/', '')
+        .languages
+          %ul.languages
+            %li.ru.active RU
+            %li.en= html::anchor('/', 'EN')
+            %li.cn= html::anchor('/', 'CN')
+  
+          = html::anchor('/', i18n::get('Контакты'))
+        .clear
+
+      %ul.top_menu
+        %li.first
+          = html::anchor('/', i18n::get('Бизнес в Китае'))
+        %li
+          = html::anchor('/', i18n::get('Образование в Китае'))
+        %li
+          = html::anchor('/', i18n::get('Услуги перевода'))
+        %li
+          = html::anchor('/', i18n::get('Ваш вопрос о Китае'))
+        %li.last
+          = html::anchor('/', i18n::get('Блог о Китае'))
+
+      .top_banner
+        .left
+          %h1 Погода в городах России
+        .right
+          = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
+      .clear
+
+      #content
+        = $content
+      .clear
+
+
+      #footer
+        .links
+          = html::anchor('/', '"' . i18n::get("Мост в Китай") . '"')
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', i18n::get('О нас'))
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', i18n::get('Контакты'))
+          %br
+          = '&copy;'
+          = html::anchor('/', 'www.waytochina.org')
+        .sections
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Образование в Китае, учеба в Китае')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Перевод с китайского')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Бизнес в Китае')))

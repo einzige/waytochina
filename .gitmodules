@@ -22,3 +22,6 @@
 [submodule "modules/editor"]
 	path = modules/editor
 	url = git://github.com/biakaveron/editor.git
+[submodule "modules/haml"]
+	path = modules/haml
+	url = git://github.com/fredwu/kohana-phamlp.git

@@ -1,0 +1,14 @@
+.cities_wrapper
+  - foreach($cities as $city)
+    .city
+      = html::image(Helper_Weather::city_image_path($city['image']), array('width' => 120))
+      %div
+        %h3= i18n::get($city['name'])
+        %p= $city['temperature'] . '°C'
+      %div
+        = html::image(Helper_Weather::state_image_path($city['pic'], array('class' => 'state')))
+      .clear
+      %span= str_replace(' ', '&nbsp;', i18n::get($city['state']))
+.clear
+
+

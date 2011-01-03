@@ -8,7 +8,7 @@
  * @see  http://kohanaframework.org/guide/using.configuration
  * @see  http://php.net/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('Asia/Krasnoyarsk');
 
 /**
  * Set the default locale.
@@ -58,7 +58,8 @@ if (getenv('KOHANA_ENV') !== FALSE)
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/',
+    'base_url'   => 'http://china.ru',
+    'index_file' => FALSE
 ));
 
 /**
@@ -78,21 +79,35 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'oauth'      => MODPATH.'oauth',      // OAuth authentication
-	// 'pagination' => MODPATH.'pagination', // Paging of results
+	 'database'   => MODPATH.'database',   // Database access
+	 'image'      => MODPATH.'image',      // Image manipulation
+	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	 'oauth'      => MODPATH.'oauth',      // OAuth authentication
+         'pagination' => MODPATH.'pagination', // Paging of results
+         'editor'     => MODPATH.'editor',
+         'phamlp'     => MODPATH.'haml'
+
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
 
 /**
+ * Load language conf
+ */
+$langs 		= Kohana::config('appconf.lang_uri_abbr');
+$default_lang 	= Kohana::config('appconf.language_abbr');
+$lang_ignore	= Kohana::config('appconf.lang_ignore');
+$langs_abr 	= implode('|',array_keys($langs)) ;
+if(!empty($langs_abr))
+	$langs_abr .= '|' . $lang_ignore;
+ 
+/**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))
 	->defaults(array(
+	        'lang'       => $default_lang,
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
