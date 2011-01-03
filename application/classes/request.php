@@ -11,15 +11,18 @@ class Request extends Kohana_Request {
 	public static function instance( & $uri = TRUE)
 	{
 		$instance = parent::instance($uri);
+
+		/* get the lang_abbr from uri segments */
+		$segments = explode('/',$instance->uri);
+		$lang_abbr = isset($segments[0]) ? $segments[0]:'';
+
+                if($lang_abbr == 'admin') return $instance;
  
 		$index_page     = Kohana::$index_file;
 		$lang_uri_abbr 	= Kohana::config('appconf.lang_uri_abbr');
 		$default_lang 	= Kohana::config('appconf.language_abbr');	
 		$lang_ignore	= Kohana::config('appconf.lang_ignore');	
  
-		/* get the lang_abbr from uri segments */
-		$segments = explode('/',$instance->uri);
-		$lang_abbr = isset($segments[0]) ? $segments[0]:'';
  
 		/* get current language */
 		$cur_lang = $instance->param('lang',$default_lang);

@@ -12,10 +12,10 @@ return array(
     'Мост в Китай'        => 'Way to China',
     'О нас'               => 'About us',
     'Образование в Китае, учеба в Китае' => 'Education in China',
-    'Перевод с китайского' => 'Translation from Chinese',
-    'Конвертировать' => 'Convert',
-    'а в других городах?' => 'Other cities &rarr;',
+    'Перевод с китайского'               => 'Translation from Chinese',
+    'Конвертировать'          => 'Convert',
+    'а в других городах?'     => 'Other cities &rarr;',
     'Погода в городах России' => 'Weather in Russia',
-    'Погода в городах Китая' => 'Weather in China',
-    'Конвертор валют' => 'Currency Converter'
+    'Погода в городах Китая'  => 'Weather in China',
+    'Конвертор валют'         => 'Currency Converter'
 );

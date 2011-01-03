@@ -105,6 +105,14 @@ if(!empty($langs_abr))
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+
+Route::set('admin', 
+           'admin(/<controller>((/<id>)/<action>))')
+          ->defaults(array(
+                'directory'  => 'admin',
+                'controller' => 'business',
+                'action'     => 'index'));
+
 Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))
 	->defaults(array(
 	        'lang'       => $default_lang,
