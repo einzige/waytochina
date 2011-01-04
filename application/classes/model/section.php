@@ -2,7 +2,7 @@
 
 class Model_Section extends ORM
 {
-    protected $_has_many = array('section_pages' => array());
+    protected $_has_many = array('pages' => array());
 
     protected $_rules = array
     (
@@ -16,4 +16,19 @@ class Model_Section extends ORM
     (
         'name' => 'Название'        
     );
+
+    public function business()
+    {
+        return $this->where('name', '=', 'business');
+    }
+
+    public function education()
+    {
+        return $this->where('name', '=', 'education');
+    }
+
+    public function lang($lang)
+    {
+        return $this->where('lang', '=', "$lang");
+    }
 }

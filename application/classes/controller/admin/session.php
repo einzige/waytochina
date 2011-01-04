@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Admin_Session extends Controller_Haml
+class Controller_Admin_Session extends Controller_Layout
 {
     public $template = 'layouts/login';
 
@@ -13,9 +13,6 @@ class Controller_Admin_Session extends Controller_Haml
     {
         Auth::instance()->logout(); 
  
-        $this->template->title = 'Вход в систему управления сайтом';
-        $this->template->content = Haml::factory('admin/session/login')->bind('user', $user);
-
         $this->template->bind('errors', $errors);
         $this->template->bind('messages', $messages);
  
@@ -25,7 +22,7 @@ class Controller_Admin_Session extends Controller_Haml
 
             if ( ! Auth::instance()->logged_in() )
             {
-                $messages = array('Ошибка. Вы ввели неверный логин/пароль.');
+                $errors = array('Ошибка. Вы ввели неверный логин/пароль.');
                 return;
             }
  

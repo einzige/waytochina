@@ -14,12 +14,39 @@ h2 {
     color: #AA0000;
     font-size: 28px;
     font-weight: normal;
-    padding: 10px;
+    padding: 10px 10px 0px 0px;
     margin: 0;
+}
+
+h3 {
+    color: #AA0000;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 30px 10px 0px 0px;
+    margin: 0;
+}
+
+table {
+    border-left: 3px solid #CCC;
+    margin: 10px;
+    background: white;
+}
+
+table td {
+    color: white;
+    border-bottom: 1px solid #CCC;
+    border-right: 1px solid #EEE;
+    padding: 5px 10px 5px 10px;
 }
 
 #content {
     padding: 10px;
+}
+
+.lang {
+    float: right;
+    color: red;
+    font-size: 18px;
 }
 
 /* __________ MESSAGES ___________ */
@@ -29,10 +56,9 @@ h2 {
     background: #CEEDC0;
     border: #A7DE8E solid 1px;
     width: 10px;
-    height: 10px;
     min-width: 500px;
     min-height: 40px;
-    margin: 20px 20px 20px 0;
+    margin: 20px 20px 5px 10px;
 }
 
 .message_box ul {
@@ -51,10 +77,9 @@ h2 {
     background: #EDC0C8;
     border: #EB7F91 solid 1px;
     width: 10px;
-    height: 10px;
     min-width: 500px;
     min-height: 40px;
-    margin: 20px 20px 20px 0;
+    margin: 20px 20px 20px 10px;
 }
 
 .error_box ul {
@@ -116,4 +141,32 @@ label {
 }
 
 #menu ul li a:hover {
+}
+
+/* ______________ CONTROLS _______________ */
+
+.toggler {
+}
+
+.toggler a {
+    color: green;
+    padding: 3px;
+}
+
+.toggler a:hover {
+    color: white;
+    background: green;
+}
+
+.edit a {
+    color: green;
+}
+
+.delete a {
+    color: blue;
+}
+
+.goto a {
+    color: black;
+    font-weight: bold;
 }

@@ -8,4 +8,4 @@
     .three= $forecast['state']
     .clear
   .another
-    %a{:href => "/weather/russia/"}= i18n::get('а в других городах?')
+    = html::anchor("/weather/russia/", i18n::get('а в других городах?'))

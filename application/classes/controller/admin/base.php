@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Admin_Base extends Controller_Haml {
+class Controller_Admin_Base extends Controller_Layout {
 
     public $template = 'layouts/admin';
 
@@ -28,19 +28,18 @@ class Controller_Admin_Base extends Controller_Haml {
     public function before()
     {
         parent::before();
-        $this->session = Session::instance();
 
         if( ! Auth::instance()->logged_in())
-            Request::instance()->redirect(Path::login_admin());
+            Request::instance()->redirect('/admin/session/login');
     }
 
     public function after()
     {
-        $this->template->set('messages', Session::instance()->get_once('messages'));
-        $this->template->set('errors',   Session::instance()->get_once('errors'));
-
         Session::instance()->set('messages', $this->messages);
         Session::instance()->set('errors',   $this->errors);
+
+        $this->template->set('messages', Session::instance()->get_once('messages'));
+        $this->template->set('errors',   Session::instance()->get_once('errors'));
 
         parent::after();
     }

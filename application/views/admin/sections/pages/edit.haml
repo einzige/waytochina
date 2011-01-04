@@ -1,0 +1,13 @@
+= form::open("/admin/business/pages/$page->id/edit")
+  %table
+    %tr
+      %td= form::label('page[name]',  'Url-имя: ')
+      %td= form::input('page[name]', $page->name)
+    %tr
+      %td= form::label('page[title]', 'Заголовок: ')
+      %td= form::input('page[title]', $page->title)
+
+  = html::editor('page[content]', $page->content)
+
+  = form::submit('commit', 'сохранить')
+= form::close()

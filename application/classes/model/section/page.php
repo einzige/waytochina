@@ -9,7 +9,7 @@ class Model_Section_Page extends ORM
     protected $_rules = array
     (
         'section_id' => array('not_empty' => array()),
-        'title' => array('not_empty' => array())
+        'name'       => array('not_empty' => array())
     );
     protected $_filters = array
     (
@@ -22,7 +22,7 @@ class Model_Section_Page extends ORM
 
     protected $_sorting = array
     (
-        'ord'    => 'ASC',
+        'ord'        => 'ASC',
         'created_at' => 'DESC'
     );
 }

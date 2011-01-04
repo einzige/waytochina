@@ -15,6 +15,7 @@
         %li= html::anchor('/admin/business', 'Услуги перевода')
         %li= html::anchor('/admin/business', 'Вопросы')
         %li= html::anchor('/admin/business', 'Заявки')
+      %p.lang= i18n::$lang
 
     - if(isset($errors) && $errors)
       .error_box
