@@ -3,7 +3,7 @@ return array
 (
 	'phamlp' => array
 	(
-		'lib_dir' => realpath(dirname(__FILE__).'/../../modules/haml/vendor/phamlp_2.2_r0094/').'/',
+		'lib_dir' => realpath(dirname(__FILE__).'/../../modules/phamlp/vendor/phamlp_2.2_r0094/').'/',
 		'haml'    => array
 		(
 			'cache_dir' => 'haml/', // cache_dir is a directory within APPPATH.'cache/'
