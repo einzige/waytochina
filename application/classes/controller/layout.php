@@ -7,8 +7,10 @@ class Controller_Layout extends Controller_Haml
 
     public function __construct(Request $request)
     {
-        $this->language = $request->param('lang');
+        $this->language = $request->language();
+
         i18n::$lang = $this->language . '-' . $this->language; // Fake ISO culture
+
         parent::__construct($request);
     }
  

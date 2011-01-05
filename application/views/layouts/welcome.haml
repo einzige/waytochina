@@ -57,9 +57,9 @@
       .clear
 
       .weather_block
-        = Request::factory('/weather/russia_widget')->execute()
-        = Request::factory('/weather/china_widget')->execute()
-        = Request::factory('/converter/widget')->execute()
+        = Request::factory("weather/russia_widget")->execute()
+        = Request::factory("weather/china_widget")->execute()
+        = Request::factory("converter/widget")->execute()
       .clear
 
       #footer

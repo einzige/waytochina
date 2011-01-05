@@ -112,7 +112,6 @@ if( ! empty($langs_abr)) $langs_abr .= '|' . $lang_ignore;
 Route::set('admin_business_pages', 
            '<lang>/admin/business/pages((/<id>)/<action>)', array('lang' => "({$langs_abr})",'id'=>'.+'))
           ->defaults(array(
-                'lang'       => $default_lang,
                 'directory'  => 'admin/business',
                 'controller' => 'pages',
                 'action'     => 'index'));
@@ -120,7 +119,6 @@ Route::set('admin_business_pages',
 Route::set('admin_business', 
            '(<lang>/)admin/business(/<action>)')
           ->defaults(array(
-                'lang'       => $default_lang,
                 'directory'  => 'admin/sections',
                 'controller' => 'business',
                 'action'     => 'edit'));
@@ -128,7 +126,6 @@ Route::set('admin_business',
 Route::set('admin_root', 
            '(<lang>/)admin', array('lang' => "({$langs_abr})"))
           ->defaults(array(
-                'lang'       => $default_lang,
                 'directory'  => 'admin/sections',
                 'controller' => 'business',
                 'action'     => 'edit'));
@@ -136,14 +133,12 @@ Route::set('admin_root',
 Route::set('admin', 
            '(<lang>/)admin(/<controller>((/<id>)/<action>))', array('lang' => "({$langs_abr})",'id'=>'.+'))
           ->defaults(array(
-                'lang'       => $default_lang,
                 'directory'  => 'admin',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
 Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))
 	->defaults(array(
-	        'lang'       => $default_lang,
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));

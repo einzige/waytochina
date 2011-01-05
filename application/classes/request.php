@@ -2,16 +2,25 @@
  
 class Request extends Kohana_Request {
 
-        public static function language()
+        public $lang;
+
+        public function language()
         {
-	    $default_lang = Kohana::config('appconf.language_abbr');	
-            return Request::instance()->param('lang', $default_lang);
+            return Request::instance()->lang;
         }
+
+	public static function factory($uri)
+	{
+	    if (strpos($uri, '://') === FALSE)
+                $uri = Request::instance()->language() . '/' . $uri;
+
+            return new Request($uri);
+	}
 
 	public function redirect($url = '', $code = 302)
 	{
 	    if (strpos($url, '://') === FALSE)
-	        $url = Request::language() . $url; 
+	        $url = Request::instance()->language() . $url; 
 
             parent::redirect($url, $code);
 	}
@@ -20,32 +29,28 @@ class Request extends Kohana_Request {
 	{
 		$instance = parent::instance($uri);
 
-		/* get the lang_abbr from uri segments */
-		$segments = explode('/',$instance->uri);
-		$lang_abbr = isset($segments[0]) ? $segments[0]:'';
-
 		$index_page     = Kohana::$index_file;
 		$lang_uri_abbr 	= Kohana::config('appconf.lang_uri_abbr');
 		$default_lang 	= Kohana::config('appconf.language_abbr');	
 		$lang_ignore	= Kohana::config('appconf.lang_ignore');	
  
 		/* get current language */
-		$cur_lang = $instance->param('lang',$default_lang);
- 
-		/* check for invalid abbreviation */
-		if( ! isset($lang_uri_abbr[$lang_abbr]))
-		{		
-			/* check for abbreviation to be ignored */
-			if ($cur_lang != $lang_ignore) {
-				/* check and set the default uri identifier */
-				$index_page .= empty($index_page) ? $default_lang : "/$default_lang";
- 
-			 	/* redirect after inserting language id */
- 				header('Location: '.Url::base().$index_page . '/' . $instance->uri);
-				die();
-			}
-		}
- 
+                $instance->lang = $instance->param('lang');
+
+                if( ! $instance->param('lang'))
+                {
+                    if( ! $instance->lang = Session::instance()->get('lang')) 
+                    {
+                        $instance->lang = $default_lang;
+                    }
+
+		    $index_page .= empty($index_page) ? $instance->lang : "/$instance->lang";
+
+                    header('Location: '.Url::base().$index_page . '/' . $instance->uri);
+                    die();
+                }
+                Session::instance()->set('lang', $instance->lang);
+
 		return $instance;
         }
 }

@@ -28,7 +28,7 @@ class HTML extends Kohana_HTML {
             }
             elseif ($uri[0] !== '#')
             {
-                $lang = Request::instance()->param('lang');
+                $lang = Request::instance()->language();
                 // Make the URI absolute for non-id anchors
                 $uri = URL::site($lang . $uri, $protocol);
             }

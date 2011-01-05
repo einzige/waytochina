@@ -12,7 +12,7 @@ class Form extends Kohana_Form {
         }
         else 
         {
-            $action = Request::language() . '/' . $action;
+            $action = Request::instance()->language() . '/' . $action;
         }
 
         if ($action === '')

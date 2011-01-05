@@ -12,7 +12,7 @@ class URL extends Kohana_URL {
      
         $option_str = '';
         $site_url = Url::base();
-        $lng = Request::instance()->param('lang');
+        $lng = Request::instance()->language();
      
         foreach($options as $key => $option){
             $option_str .= "{$key}='{$option}' ";
@@ -29,7 +29,7 @@ class URL extends Kohana_URL {
     */
     public static function redirect($to = ''){
         $site_url = Url::base();
-        $lng = Request::instance()->param('lang');
+        $lng = Request::instance()->language();
      
         header("Location: {$site_url}{$lng}/{$to}");
         die();
