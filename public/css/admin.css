@@ -28,7 +28,7 @@ h3 {
 
 table {
     border-left: 3px solid #CCC;
-    margin: 10px;
+    margin: 10px 10px 0px 0px;
     background: white;
 }
 
@@ -37,6 +37,38 @@ table td {
     border-bottom: 1px solid #CCC;
     border-right: 1px solid #EEE;
     padding: 5px 10px 5px 10px;
+}
+
+table td.drag {
+    width: 10px;
+    height: 22px;
+    background: url('/public/images/admin/controls/updown.png');
+}
+
+table input[type="submit"] {
+    background: #EEE;
+    border: 1px solid #CCC;
+    color: gray;
+    font-size: 10px;
+}
+
+#sortable button {
+    background: #EEE;
+    border: 1px solid #CCC;
+    color: green;
+    padding:5px;
+    font-size: 10px;
+    font-weight: bold;
+    border-left: 3px solid #CCC;
+}
+
+table input[type="submit"]:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+tr.selected_row {
+    background: yellow;
 }
 
 #content {
@@ -159,7 +191,7 @@ label {
 }
 
 .edit a {
-    color: green;
+    color: blue;
 }
 
 .delete a {

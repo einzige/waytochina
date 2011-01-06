@@ -86,7 +86,8 @@ Kohana::modules(array(
          'pagination' => MODPATH.'pagination', // Paging of results
          'ckeditor'   => MODPATH.'ckeditor',
          'temp'       => MODPATH.'temp',
-         'phamlp'     => MODPATH.'phamlp'
+         'phamlp'     => MODPATH.'phamlp',
+         'menu'       => MODPATH.'menu'
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
@@ -119,14 +120,14 @@ Route::set('admin_business_pages',
 Route::set('admin_business', 
            '(<lang>/)admin/business(/<action>)')
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
 Route::set('admin_root', 
            '(<lang>/)admin', array('lang' => "({$langs_abr})"))
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 

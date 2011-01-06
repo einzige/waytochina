@@ -1,0 +1,16 @@
+#sortable{:rel => "section_page"}
+  %table{:id => "row_ids"}
+    - foreach($section->pages->find_all() as $page)
+      %tr{:id => "#{$page->id}"}
+        %td.drag
+        %td.goto
+          = html::anchor("/admin/$section->name/pages/$page->id/edit", $page->title)
+        %td.edit
+          = html::anchor("/admin/$section->name/pages/$page->id/edit", 'редактировать')
+        %td.delete
+          = form::open("/admin/$section->name/pages/destroy")
+            = form::hidden('id', $page->id)
+            = form::submit('commit', 'удалить')
+          = form::close()
+
+  %button пересортировать

@@ -4,8 +4,15 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %title= isset($title) ? $title . ' | WayToChina.org' : 'Админ. панель | WayToChina.org'
 
+    -#-------------- CSS -------------#-
     = html::style('public/css/admin.css')
+
+    -#-------------- JS -------------#-
     = html::script('public/js/jquery.js')
+    = html::script('public/js/jquery.json.js')
+    = html::script('public/js/confirm.js')
+    = html::script('public/js/jquery.tablednd_0_5.js')
+    = html::script('public/js/admin.js')
 
   %body
     #menu

@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Admin_Sections_Base extends Controller_Admin_Base 
+class Controller_Admin_Section_Base extends Controller_Admin_Base 
 {
     protected $section;
     public    $section_name;

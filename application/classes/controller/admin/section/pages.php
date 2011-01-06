@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Admin_Sections_Pages extends Controller_Admin_Base {
+class Controller_Admin_Section_Pages extends Controller_Admin_Base {
 
     protected $section;
 
@@ -21,7 +21,7 @@ class Controller_Admin_Sections_Pages extends Controller_Admin_Base {
     public function action_index()
     {
         $this->auto_render = false; // 'cause it renders as partial inda section view, we don't need to render layout
-        echo $this->template->content = Haml::factory('admin/sections/pages/index', 
+        echo $this->template->content = Haml::factory('admin/section/pages/index', 
                                                        array('section' => $this->section));
     }
 
@@ -44,7 +44,7 @@ class Controller_Admin_Sections_Pages extends Controller_Admin_Base {
                 $this->add_errors($page->validate()->errors('page'));
         }
 
-        $this->template->content = Haml::factory('admin/sections/pages/edit', array('page' => $page));
+        $this->template->content = Haml::factory('admin/section/pages/edit', array('page' => $page));
     }
 
     public function action_edit()
@@ -63,8 +63,23 @@ class Controller_Admin_Sections_Pages extends Controller_Admin_Base {
                 $this->add_errors($page->validate()->errors('page'));
         }
 
-        $this->template->content = Haml::factory('admin/sections/pages/edit', array('page' => $page));
+        $this->template->content = Haml::factory('admin/section/pages/edit', array('page' => $page));
     }
 
+    public function action_destroy()
+    {
+        if (isset($_POST['id']))
+        {
+            if (ORM::factory('page')->find($_POST['id'])->delete()) 
+            {
+                $this->add_messages('запись успешно удалена');
+            }
+            else
+            {
+                $this->add_errors('не удалось удалить запись');
+            }
+        }
+        $this->request->redirect(Request::$referrer);
+    }
 
 } // End Admin Business
