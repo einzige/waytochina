@@ -6,4 +6,7 @@
       %td.edit
         = html::anchor("/admin/$section->name/pages/$page->id/edit", 'редактировать')
       %td.delete
-        = html::anchor("/admin/$section->name/pages/$page->id/delete", 'удалить')
+        = form::open("/admin/$section->name/pages/destroy")
+          = form::hidden('id', $page->id)
+          = form::submit('commit', 'удалить')
+        = form::close()
