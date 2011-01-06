@@ -1,9 +1,0 @@
-%table
-  - foreach($section->pages->find_all() as $page)
-    %tr
-      %td.goto
-        = html::anchor("/admin/$section->name/pages/$page->id/edit", $page->title)
-      %td.edit
-        = html::anchor("/admin/$section->name/pages/$page->id/edit", 'редактировать')
-      %td.delete
-        = html::anchor("/admin/$section->name/pages/$page->id/delete", 'удалить')

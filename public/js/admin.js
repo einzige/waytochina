@@ -1,30 +1,30 @@
-function destroy(tablename, record_id)
+function reorder() 
 {
-        $.post("/index.php/admin/ajax/destroy", { id: record_id, table_name: tablename },
-               function(data)
-               {
-                        alert(data);
-                        if(document.getElementById(tablename+record_id) != null){
-                                $('#'+tablename+record_id).html('');
-                        }
-                        else{
-                                $('#'+record_id).html('');
-                        }
-                        $('.messages').html('<ul><li>запись успешно удалена</li></ul>');
-               }
-        );
+    if ($.tableDnD.currentTable == null) { return; }
+
+    var model = $('#sortable').attr('rel');
+    var post_data = $.tableDnD.serialize() + "&model=" + model;
+
+    //$.post("/admin/ajax/order", post_data, function(msg){ alert(msg); });
+    $.post("/admin/ajax/order", post_data, function(done){alert(done);});
 }
 
-function destroyNews(id)             { destroy('news', id);               return false; }
-function destroySection(id)          { destroy('section', id);            return false; }
-function destroySectionPage(id)      { destroy('section_page', id);       return false; }
-function destroyBanner(id)           { destroy('banner', id);             return false; }
-function destroyModel(id)            { destroy('model', id);              return false; }
-function destroyModelPhoto(id)       { destroy('model_photo', id);        return false; }
-function destroyProject(id)          { destroy('project', id);            return false; }
-function destroyProjectPage(id)      { destroy('project_page', id);       return false; }
-function destroyProjectPagePhoto(id) { destroy('project_page_photo', id); return false; }
-function destroyContest(id)          { destroy('contest', id);            return false; }
-function destroyBidder(id)           { destroy('bidder', id);             return false; }
-function destroyProfile(id)          { destroy('profile', id);            return false; }
-function destroyPicture(id)          { destroy('picture', id);            return false; }
+$(document).ready(function()
+{
+    $('#sortable table').tableDnD({ onDragClass : "selected_row", 
+                                    onDrop: function()
+                                    {
+                                        $.tableDnd.fix(); // FIXME hardcore fix
+                                    }});
+    $('#sortable button').click( function(){ reorder(); } );
+
+    $('.confirmative').confirm({
+        msg:'Хотите удалить?',
+        timeout:7000,
+        eventType:'mouseover',
+        buttons: {
+            ok:'Да',
+            cancel:'Нет'
+        }
+    });
+});

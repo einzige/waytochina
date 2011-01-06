@@ -111,11 +111,15 @@ class Model_Weather
                     $city['state'] = $states[$state]['rus'];
                 else
                     $city['state'] = $state;
-                $city['pic']   = $states[$state]['img'];
+
+                $city['pic'] = $states[$state]['img'];
             }
 
             if( ! isset($city['state']))
+            {
                 $city['state'] = $state;
+                $city['pic']   = 'sun.gif';
+            }
 
             return $city;
         }

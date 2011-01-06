@@ -119,14 +119,14 @@ Route::set('admin_business_pages',
 Route::set('admin_business', 
            '(<lang>/)admin/business(/<action>)')
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
 Route::set('admin_root', 
            '(<lang>/)admin', array('lang' => "({$langs_abr})"))
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 

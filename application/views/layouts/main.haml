@@ -36,15 +36,26 @@
 
       .top_banner
         .left
-          %h1= i18n::get('Погода в городах России')
+          %h1= i18n::get('Бизнес в Китае')
         .right
           = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
       .clear
 
-      #content
-        = $content
-      .clear
-
+      #content_wrapper
+        #breadcrumbs_wrapper
+          .breadcrumbs
+            here is breadcrumbs
+          .search
+            .yandexform{:onclick => "return {type: 3, logo: 'rb', arrow: true, webopt: false, websearch: false, bg: '#FFFFFF', fg: '#000000', fontsize: 12, suggest: true, site_suggest: true, encoding: ''}"}
+              %form{:action => "http://test.web-spider.ru/education/aboutus/search/", :method => "get"}
+                %input{:name => "searchid", :type => "hidden", :value => "247782"}/
+                %input{:name => "text"}/
+                %input{:type => "submit", :value => "\320\235\320\260\320\271\321\202\320\270"}/
+            %script{:charset => "utf-8", :src => "http://site.yandex.net/load/form/1/form.js", :type => "text/javascript"}
+          .clear
+        #content
+          = $content
+        .clear
 
       #footer
         .links

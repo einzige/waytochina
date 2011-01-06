@@ -28,11 +28,28 @@ a {
     margin: 20px auto 30px;
 }
 
-.logo a{
+#content_wrapper {
+    padding: 20px 0px 30px;
+}
+
+.logo a {
     width: 178px;
     height: 53px;
     background: url(/public/images/logo.jpg);
     float: left;
+}
+
+.breadcrumbs {
+    color: #B4B4B4;
+    float: left;
+    font: normal normal normal 0,8em/normal verdana;
+    padding: 8px 0px 20px;
+}
+
+.search {
+    float: right;
+    text-align: right;
+    width: 180px;   
 }
 
 .clear{
