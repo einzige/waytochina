@@ -29,6 +29,17 @@ class Request extends Kohana_Request {
     {
         $instance = parent::instance($uri);
 
+        // check if ajax call emitted without any language
+        if (Request::$method == "POST") 
+        {
+            $segments = explode('/', $instance->uri);
+
+            if ($segments[1] == 'ajax')
+            {
+                return $instance;
+            }
+        }
+
         $index_page    = Kohana::$index_file;
         $lang_uri_abbr = Kohana::config('appconf.lang_uri_abbr');
         $default_lang  = Kohana::config('appconf.language_abbr');    
@@ -44,7 +55,7 @@ class Request extends Kohana_Request {
                 $instance->lang = $default_lang;
             }
 
-        $index_page .= empty($index_page) ? $instance->lang : "/$instance->lang";
+            $index_page .= empty($index_page) ? $instance->lang : "/$instance->lang";
 
             header('Location: '.Url::base().$index_page . '/' . $instance->uri);
             die();

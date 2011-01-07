@@ -28,11 +28,66 @@ a {
     margin: 20px auto 30px;
 }
 
-.logo a{
+#content_wrapper {
+    padding: 20px 0px 30px;
+}
+
+.logo a {
     width: 178px;
     height: 53px;
     background: url(/public/images/logo.jpg);
     float: left;
+}
+
+.breadcrumbs {
+    color: #B4B4B4;
+    float: left;
+    font: normal normal normal 0,8em/normal verdana;
+    padding: 8px 0px 20px;
+}
+
+.search {
+    float: right;
+    text-align: right;
+    width: 180px;   
+}
+
+#right_side {
+    float: right;
+    width: 180px;
+}
+
+#left_side {
+    float: left;
+    width: 200px;
+}
+
+#left_side .menu {
+    margin-bottom: 40px;
+    padding: 2px;
+    border: 1px solid blue;
+}
+
+#left_side .menu li {
+    padding: 3px 7px 0px;
+    height: 22px;
+    width: 180px;
+}
+
+#left_side .menu li.current a, #left_side .menu li:hover a {
+    text-decoration: none;
+    color: white;
+}
+
+#left_side .menu li a {
+    display: block;
+    padding: 1px 0px 0px 7px;
+    text-decoration: none;
+}
+
+#left_side .menu.business li.current, #left_side .menu.business li:hover {
+    background: url('/public/images/menu/left/blue.jpg');
+    color: white;
 }
 
 .clear{
@@ -186,7 +241,9 @@ ul.languages a:hover {
 /* __________ CONTENT __________ */
 
 #content {
-    padding: 20px 0 30px;
+    padding: 0 20px;
+    width: 580px;
+    margin: 0px 0px 0px 200px;
 }
 
 /* __________ FOOTER __________ */

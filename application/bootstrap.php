@@ -86,7 +86,8 @@ Kohana::modules(array(
          'pagination' => MODPATH.'pagination', // Paging of results
          'ckeditor'   => MODPATH.'ckeditor',
          'temp'       => MODPATH.'temp',
-         'phamlp'     => MODPATH.'phamlp'
+         'phamlp'     => MODPATH.'phamlp',
+         'menu'       => MODPATH.'menu'
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
@@ -136,6 +137,14 @@ Route::set('admin',
                 'directory'  => 'admin',
                 'controller' => 'business',
                 'action'     => 'edit'));
+
+Route::set('business_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
+                                                                   'section_name' => '(business|education|translation)',
+                                                                      'page_name' => '.+'))
+	->defaults(array(
+		'controller' => 'pages',
+		'action'     => 'show',
+	));
 
 Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))
 	->defaults(array(
