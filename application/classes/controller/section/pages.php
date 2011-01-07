@@ -20,16 +20,10 @@ class Controller_Section_Pages extends Controller_Layout {
             throw new Kohana_Exception("Section with the given name <$section_name> does not exists");
         }
         
-        $pages = $this->section->pages->find_all();
-        $pmenu_items = array();
+        $this->menu = Menu::factory($section_name)->with_pages($this->section);
 
-        foreach($pages as $page)
-        {
-            $pmenu_items[] = $page->to_array();   
-        }
-
-        $this->menu = Menu::factory($section_name);
-        $this->menu->insert($pmenu_items, "/$section_name");
+        Breadcrumbs::add(Breadcrumb::factory()->set_title($this->section->title)
+                                              ->set_url("/$section_name"));
 
         Haml::set_global('section',        $this->section);
         Haml::set_global('left_side_menu', $this->menu);
@@ -43,10 +37,16 @@ class Controller_Section_Pages extends Controller_Layout {
         //
         $page = $this->section->pages->where('name', '=', $this->request->param('page_name'))
                                      ->find();
+        
+        $page_url = '/' . $this->section->name . "/$page->name";
+
+        $this->menu->set_current($page_url);
+
+        Breadcrumbs::add(Breadcrumb::factory()->set_title($page->title));
+
+        $this->template->title = $page->title;
 
         $this->view_data['page'] = $page;
-        
-        $this->menu->set_current('/' . $this->section->name . "/$page->name");
     }
 
 } // End Sections_Base

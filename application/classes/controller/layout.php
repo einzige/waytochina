@@ -11,6 +11,9 @@ class Controller_Layout extends Controller_Haml
 
         i18n::$lang = $this->language . '-' . $this->language; // Fake ISO culture
 
+        Breadcrumbs::add(Breadcrumb::factory()->set_title("«Мост в Китай»")
+                                              ->set_url("/"));
+
         parent::__construct($request);
     }
  

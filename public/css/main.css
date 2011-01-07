@@ -39,11 +39,26 @@ a {
     float: left;
 }
 
-.breadcrumbs {
+#breadcrumbs {
     color: #B4B4B4;
-    float: left;
-    font: normal normal normal 0,8em/normal verdana;
+    font-size: 10px;
+    font-weight: bold;
+    float:left;
     padding: 8px 0px 20px;
+}
+
+#breadcrumbs li {
+    float: left;
+    padding: 0 1px 0 2px;
+}
+
+#breadcrumbs li.slash {
+    font-size: 9px;
+}
+
+#breadcrumbs a {
+    font-weight: normal;
+    font-size: 10px;
 }
 
 .search {

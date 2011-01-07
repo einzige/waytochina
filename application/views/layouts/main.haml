@@ -46,8 +46,7 @@
 
       #content_wrapper
         #breadcrumbs_wrapper
-          .breadcrumbs
-            here is breadcrumbs
+          .breadcrumbs= Breadcrumbs::render()
           .search
             .yandexform{:onclick => "return {type: 3, logo: 'rb', arrow: true, webopt: false, websearch: false, bg: '#FFFFFF', fg: '#000000', fontsize: 12, suggest: true, site_suggest: true, encoding: ''}"}
               %form{:action => "http://test.web-spider.ru/education/aboutus/search/", :method => "get"}

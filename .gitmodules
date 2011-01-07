@@ -22,3 +22,6 @@
 [submodule "modules/menu"]
 	path = modules/menu
 	url = git://github.com/b263/kohana-menu.git
+[submodule "modules/breadcrumbs"]
+	path = modules/breadcrumbs
+	url = git://github.com/kierangraham/breadcrumbs.git

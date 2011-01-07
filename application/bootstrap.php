@@ -87,7 +87,8 @@ Kohana::modules(array(
          'ckeditor'   => MODPATH.'ckeditor',
          'temp'       => MODPATH.'temp',
          'phamlp'     => MODPATH.'phamlp',
-         'menu'       => MODPATH.'menu'
+         'menu'       => MODPATH.'menu',
+         'breadcrumbs'=> MODPATH.'breadcrumbs'
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation

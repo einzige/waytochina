@@ -27,18 +27,9 @@ class Controller_Section_Base extends Controller_Layout {
             throw new Kohana_Exception("Section with the given name <$name> does not exists");
         }
 
-        $this->menu = Menu::factory($this->section->name);
+        $this->menu = Menu::factory($this->section->name)->with_pages($this->section);
 
-        $this->pages = $this->section->pages->find_all();
-
-        $pmenu_items = array();
-
-        foreach($this->pages as $page)
-        {
-            $pmenu_items[] = $page->to_array();   
-        }
-
-        $this->menu->insert($pmenu_items, '/business');
+        Breadcrumbs::add(Breadcrumb::factory()->set_title($this->section->title));
 
         Haml::set_global('section',        $this->section);
         Haml::set_global('left_side_menu', $this->menu);
@@ -48,6 +39,7 @@ class Controller_Section_Base extends Controller_Layout {
     public function action_index()
     {
         $this->menu->set_current("/$this->section_name");
+        $this->template->title = $this->section->title;
     }
 
 } // End Sections_Base
