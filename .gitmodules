@@ -19,3 +19,6 @@
 [submodule "modules/auth"]
 	path = modules/auth
 	url = git://github.com/kohana/auth.git
+[submodule "modules/menu"]
+	path = modules/menu
+	url = git://github.com/b263/kohana-menu.git

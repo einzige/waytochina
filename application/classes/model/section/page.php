@@ -25,4 +25,15 @@ class Model_Section_Page extends ORM
         'ord'        => 'ASC',
         'created_at' => 'DESC'
     );
+
+    public function section_name()
+    {
+        return $this->section->name;
+    }
+
+    public function to_array()
+    {
+        return array('url'   => '/' . $this->section_name() . "/$this->name", 
+                     'title' => $this->title);
+    }
 }

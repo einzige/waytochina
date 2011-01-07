@@ -86,7 +86,8 @@ Kohana::modules(array(
          'pagination' => MODPATH.'pagination', // Paging of results
          'ckeditor'   => MODPATH.'ckeditor',
          'temp'       => MODPATH.'temp',
-         'phamlp'     => MODPATH.'phamlp'
+         'phamlp'     => MODPATH.'phamlp',
+         'menu'       => MODPATH.'menu'
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation

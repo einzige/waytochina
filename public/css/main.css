@@ -52,6 +52,44 @@ a {
     width: 180px;   
 }
 
+#right_side {
+    float: right;
+    width: 180px;
+}
+
+#left_side {
+    float: left;
+    width: 200px;
+}
+
+#left_side .menu {
+    margin-bottom: 40px;
+    padding: 2px;
+    border: 1px solid blue;
+}
+
+#left_side .menu li {
+    padding: 3px 7px 0px;
+    height: 22px;
+    width: 180px;
+}
+
+#left_side .menu li.current a, #left_side .menu li:hover a {
+    text-decoration: none;
+    color: white;
+}
+
+#left_side .menu li a {
+    display: block;
+    padding: 1px 0px 0px 7px;
+    text-decoration: none;
+}
+
+#left_side .menu.business li.current, #left_side .menu.business li:hover {
+    background: url('/public/images/menu/left/blue.jpg');
+    color: white;
+}
+
 .clear{
     height: 0;
     overflow: hidden;
@@ -203,7 +241,9 @@ ul.languages a:hover {
 /* __________ CONTENT __________ */
 
 #content {
-    padding: 20px 0 30px;
+    padding: 0 20px;
+    width: 580px;
+    margin: 0px 0px 0px 200px;
 }
 
 /* __________ FOOTER __________ */

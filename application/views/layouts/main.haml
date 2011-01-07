@@ -5,9 +5,18 @@
     %meta{:content => "68b5960c88c25e8a", :name => "yandex-verification"}/
     %title= isset($title) ? $title . ' | WayToChina.org' : 'WayToChina.org'
 
+<<<<<<< HEAD
     = html::style('public/css/main')
     = html::style('public/css/weather')
     = html::script('public/js/jquery')
+=======
+    = html::style('public/css/main.css')
+    = html::style('public/css/weather.css')
+
+    = html::script('public/js/jquery.js')
+    = html::script('public/js/jquery.corner.js')
+    = html::script('public/js/main.js')
+>>>>>>> feature-menu
 
   %body
     #wrapper
@@ -53,8 +62,16 @@
                 %input{:type => "submit", :value => "\320\235\320\260\320\271\321\202\320\270"}/
             %script{:charset => "utf-8", :src => "http://site.yandex.net/load/form/1/form.js", :type => "text/javascript"}
           .clear
+<<<<<<< HEAD
         #content
           = $content
+=======
+        #left_side
+          .menu.#{$section->name}= $left_side_menu->render()
+        #right_side
+          %h3 here is right side
+        #content= $content
+>>>>>>> feature-menu
         .clear
 
       #footer
