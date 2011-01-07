@@ -47,7 +47,7 @@ class Controller_Section_Base extends Controller_Layout {
 
     public function action_index()
     {
-        $this->menu->set_current('/business');
+        $this->menu->set_current("/$this->section_name");
     }
 
 } // End Sections_Base

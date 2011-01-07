@@ -29,7 +29,18 @@ class Request extends Kohana_Request {
     {
         $instance = parent::instance($uri);
 
-        if(Request::$method == "POST") return $instance;
+        // check if ajax call emitted without any language
+        if (Request::$method == "POST") 
+        {
+            $segments = explode('/', $instance->uri);
+
+            if ($segments[1] == 'ajax')
+            {
+                return $instance;
+            }
+        }
+
+        if($instance->param('controller') == "ajax") return $instance;
 
         $index_page    = Kohana::$index_file;
         $lang_uri_abbr = Kohana::config('appconf.lang_uri_abbr');
