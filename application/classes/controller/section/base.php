@@ -5,6 +5,9 @@ class Controller_Section_Base extends Controller_Layout {
     public $template = 'layouts/main';
 
     protected $section;
+    protected $pages;
+
+    public    $menu;
     public    $section_name;
 
     public function before()
@@ -24,11 +27,27 @@ class Controller_Section_Base extends Controller_Layout {
             throw new Kohana_Exception("Section with the given name <$name> does not exists");
         }
 
-        Haml::set_global('section', $this->section);
+        $this->menu = Menu::factory($this->section->name);
+
+        $this->pages = $this->section->pages->find_all();
+
+        $pmenu_items = array();
+
+        foreach($this->pages as $page)
+        {
+            $pmenu_items[] = $page->to_array();   
+        }
+
+        $this->menu->insert($pmenu_items, '/business');
+
+        Haml::set_global('section',        $this->section);
+        Haml::set_global('left_side_menu', $this->menu);
+        Haml::set_global('pages',          $this->pages);
     }
 
     public function action_index()
     {
+        $this->menu->set_current('/business');
     }
 
 } // End Sections_Base
