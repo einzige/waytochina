@@ -17,29 +17,15 @@
       #header 
         .logo= html::anchor('/', '')
         .languages
-          %ul.languages
-            %li.ru.active RU
-            %li.en= html::anchor('/', 'EN')
-            %li.cn= html::anchor('/', 'CN')
-  
+          = $lang_menu->render()
           = html::anchor('/', i18n::get('Контакты'))
         .clear
 
-      %ul.top_menu
-        %li.first
-          = html::anchor('/', i18n::get('Бизнес в Китае'))
-        %li
-          = html::anchor('/', i18n::get('Образование в Китае'))
-        %li
-          = html::anchor('/', i18n::get('Услуги перевода'))
-        %li
-          = html::anchor('/', i18n::get('Ваш вопрос о Китае'))
-        %li.last
-          = html::anchor('/', i18n::get('Блог о Китае'))
+      .top_menu= $top_menu->render()
 
       .top_banner
         .left
-          %h1= i18n::get('Бизнес в Китае')
+          %h1.#{$section->name}= i18n::get('Бизнес в Китае')
         .right
           = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
       .clear

@@ -139,6 +139,13 @@ Route::set('admin',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
+Route::set('language', '(<lang>/)set/language/<another_lang>', array('lang'         => "({$langs_abr})",
+                                                                     'another_lang' => "({$langs_abr})"))
+        ->defaults(array(
+                'controller' => 'language',
+                'action'     => 'set'
+            ));
+
 Route::set('business_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
                                                                    'section_name' => '(business|education|translation)',
                                                                       'page_name' => '.+'))

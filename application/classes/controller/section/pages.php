@@ -41,8 +41,9 @@ class Controller_Section_Pages extends Controller_Layout {
         $page_url = '/' . $this->section->name . "/$page->name";
 
         $this->menu->set_current($page_url);
+        $this->top_menu->set_current('/' . $this->section->name);
 
-        Breadcrumbs::add(Breadcrumb::factory()->set_title($page->title));
+        Breadcrumbs::add(Breadcrumb::factory()->set_title($page->title ? $page->title : 'Страница не переведена'));
 
         $this->template->title = $page->title;
 

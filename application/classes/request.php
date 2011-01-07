@@ -28,12 +28,11 @@ class Request extends Kohana_Request {
     public static function instance( & $uri = TRUE)
     {
         $instance = parent::instance($uri);
+        $segments = explode('/', $instance->uri);
 
         // check if ajax call emitted without any language
         if (Request::$method == "POST") 
         {
-            $segments = explode('/', $instance->uri);
-
             if ($segments[1] == 'ajax')
             {
                 return $instance;

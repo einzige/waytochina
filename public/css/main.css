@@ -113,14 +113,14 @@ a {
 
 /* __________ MENU __________ */
 
-ul.top_menu {
+.top_menu {
     padding-top: 20px;
     font-size: 1.1em;
     font-weight: bold;
     height: 45px;
 }
 
-ul.top_menu li a {
+.top_menu li a {
     padding-top: 13px;
     background: url("/public/images/menu/top_menu.png") no-repeat scroll right -45px transparent;
     color: #686766;
@@ -132,24 +132,24 @@ ul.top_menu li a {
     width: 200px;
 }
 
-ul.top_menu li a:hover {
+.top_menu li a:hover, .top_menu li.current a {
     background: url("/public/images/menu/top_menu.png") no-repeat scroll right -90px transparent;
     color: #FFF;
 }
 
-ul.top_menu li.last a {
+.top_menu li.last a {
     background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -45px transparent;
 }
-ul.top_menu li.first a {
+.top_menu li.first a {
     background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -45px transparent;
 }
 
-ul.top_menu li.first a:hover {
+.top_menu li.first a:hover, .top_menu li.current.first a {
     background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -90px transparent;
     color: white;
 }
 
-ul.top_menu li.last a:hover {
+.top_menu li.last a:hover, .top_menu li.current.last a {
     background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -90px transparent;
     color: white;
 }
@@ -172,13 +172,13 @@ div.languages ul {
     margin-right: 10px;
 }
 
-ul.languages {
+.languages {
     margin: 0px;
     padding: 0px;
     height: 19px;
 }
 
-ul.languages li {
+.languages li {
     display: block;
     float: left;
     height: 16px;
@@ -191,7 +191,7 @@ ul.languages li {
     width: 30px;
 }
 
-ul.languages li a {
+.languages li a {
     color: #0A48C5;
     display: block;
     float: left;
@@ -204,33 +204,37 @@ ul.languages li a {
     width: 30px
 }
 
-ul.languages li.ru {
+.languages li.active a {
+    color: black;
+}
+
+.languages li.ru {
     background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en {
+.languages li.en {
     background: url("/public/images/languages/en.jpg") no-repeat scroll left top transparent;
     width: 32px;
 }
 
-ul.languages li.cn {
+.languages li.cn {
     background: url("/public/images/languages/cn.jpg") no-repeat scroll left top transparent;
     width: 36px;
 }
 
-ul.languages li.ru:hover {
-    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+.languages li.ru:hover, .languages li.ru.active {
+    background: url("/public/images/languages/ru_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en:hover {
+.languages li.en:hover, .languages li.en.active {
     background: url("/public/images/languages/en_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.cn:hover {
+.languages li.cn:hover, .languages li.cn.active {
     background: url("/public/images/languages/cn_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages a:hover {
+.languages li a:hover {
     color: white;
 }
 
@@ -251,6 +255,14 @@ ul.languages a:hover {
 .top_banner .left h1 {
     color: #1FA50D;
     padding: 20px 0 0 20px;
+}
+
+.top_banner .left h1.business {
+    color: #2A629D;
+}
+
+.top_banner .left h1.education {
+    color: #9BBA06;
 }
 
 /* __________ CONTENT __________ */
