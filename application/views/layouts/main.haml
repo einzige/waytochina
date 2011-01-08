@@ -10,6 +10,9 @@
 
     = html::script('public/js/jquery.js')
     = html::script('public/js/jquery.corner.js')
+    = html::script('http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js')
+    = html::script('public/js/jquery.form.js')
+
     = html::script('public/js/main.js')
 
   %body
@@ -18,14 +21,14 @@
         .logo= html::anchor('/', '')
         .languages
           = $lang_menu->render()
-          = html::anchor('/', i18n::get('Контакты'))
+          = html::anchor('/', __('Контакты'))
         .clear
 
       .top_menu= $top_menu->render()
 
       .top_banner
         .left
-          %h1.#{$section->name}= i18n::get('Бизнес в Китае')
+          %h1.#{$section->name}= __('Бизнес в Китае')
         .right
           = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
       .clear
@@ -50,17 +53,17 @@
 
       #footer
         .links
-          = html::anchor('/', '"' . i18n::get("Мост в Китай") . '"')
+          = html::anchor('/', '"' . __("Мост в Китай") . '"')
           = '&nbsp;|&nbsp;'
-          = html::anchor('/', i18n::get('О нас'))
+          = html::anchor('/', __('О нас'))
           = '&nbsp;|&nbsp;'
-          = html::anchor('/', i18n::get('Контакты'))
+          = html::anchor('/', __('Контакты'))
           %br
           = '&copy;'
           = html::anchor('/', 'www.waytochina.org')
         .sections
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Образование в Китае, учеба в Китае')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Образование в Китае, учеба в Китае')))
           = '&nbsp;'
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Перевод с китайского')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Перевод с китайского')))
           = '&nbsp;'
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Бизнес в Китае')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Бизнес в Китае')))

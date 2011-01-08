@@ -11,6 +11,8 @@ class Menu extends Kohana_Menu {
 
         public function with_pages($section)
         {
+            if($section->pages->count_all() == 0) return $this;
+
             $pages = $section->pages->find_all();
             $pmenu_items = array();
 

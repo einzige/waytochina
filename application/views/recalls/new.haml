@@ -1,0 +1,20 @@
+:javascript
+  $(document).ready(function(){
+    $('#recalls').validator({ lang: '#{$lang}', position: 'top left', offset: [-12, 0], message: "<div><em/></div>" });
+  });
+
+%h3= __('Мы Вам перезвоним')
+
+= form::open('/recalls/create', array('id' => 'recalls', 'class' => 'ajax'))
+  .message{:style => 'display:none'}
+  %table.recalls
+    %tr
+      %td= __('Ваш номер телефона') . '<span>*</span>'
+      %td
+        = form::input('recall[tel]', '', array('required' => 'required'))
+        = form::hidden('recall[section]', 'business')
+        %br
+    %tr
+      %td
+      %td= form::submit('commit', __('Отправить'))
+= form::close()

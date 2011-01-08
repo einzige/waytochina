@@ -1,6 +1,13 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
 return array(
+    'Отправить' => 'Send',
+
+    'Ваш номер телефона'  => 'Your phone number',
+    'Мы Вам перезвоним'  => "We'll call you back",
+    'Спасибо. Ваш номер передан администратору.' => 'Thank you. Your phone number has been sent to our administration.',
+    'Ошибка. Возможно, Вы неверно ввели телефон.' => 'Error. May be you mistyped you phone number?',
+
     'Бизнес в Китае'      => 'Business in China',
     'Образование в Китае' => 'Education in China',
     'Услуги перевода'     => 'Translation services',

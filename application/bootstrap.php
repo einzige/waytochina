@@ -146,7 +146,13 @@ Route::set('language', '(<lang>/)set/language/<another_lang>', array('lang'     
                 'action'     => 'set'
             ));
 
-Route::set('business_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
+Route::set('contacts', '(<lang>)(/)<section_name>/contacts', array('lang' => "({$langs_abr})", 'section_name' => '.+'))
+	->defaults(array(
+		'controller' => 'contacts',
+		'action'     => 'index',
+	));
+
+Route::set('sections_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
                                                                    'section_name' => '(business|education|translation)',
                                                                       'page_name' => '.+'))
 	->defaults(array(

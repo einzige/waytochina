@@ -22,31 +22,28 @@
       #header 
         .logo= html::anchor('/', '')
         .languages
-          %ul.languages
-            %li.ru.active RU
-            %li.en= html::anchor('/', 'EN')
-            %li.cn= html::anchor('/', 'CN')
-          = html::anchor('/', i18n::get('Контакты'))
+          = $lang_menu->render()
+          = html::anchor('/', __('Контакты'))
         .clear
 
       #content
         .splash
           #menu_wrapper 
-            %a{:href => '#', :rel => 'big1'}
-              %h1= i18n::get('Бизнес в Китае')
-              %p=  i18n::get('Здесь надежные партнеры и выгодные предложения')
-            %a{:href => '#', :rel => 'big2'}
-              %h1= i18n::get('Образование в Китае')
-              %p=  i18n::get('Увлекательная учеба и перспективное будущее')
-            %a{:href => '#', :rel => 'big3'}
-              %h1= i18n::get('Услуги перевода')
-              %p=  i18n::get('Профессионально. Оперативно. Мобильно')
-            %a{:href => '#', :rel => 'big4'}
-              %h1= i18n::get('Блог о Китае')
-              %p=  i18n::get('Город, люди, события')
-            %a{:href => '#', :rel => 'big5'}
-              %h1= i18n::get('Ваш вопрос о Китае')
-              %p=  i18n::get('Мы открыты к диалогу! Спрашивайте!')
+            %a{:href => '/business', :rel => 'big1'}
+              %h1= __('Бизнес в Китае')
+              %p=  __('Здесь надежные партнеры и выгодные предложения')
+            %a{:href => '/education', :rel => 'big2'}
+              %h1= __('Образование в Китае')
+              %p=  __('Увлекательная учеба и перспективное будущее')
+            %a{:href => '/translation', :rel => 'big3'}
+              %h1= __('Услуги перевода')
+              %p=  __('Профессионально. Оперативно. Мобильно')
+            %a{:href => '/blog', :rel => 'big4'}
+              %h1= __('Блог о Китае')
+              %p=  __('Город, люди, события')
+            %a{:href => '/questions', :rel => 'big5'}
+              %h1= __('Ваш вопрос о Китае')
+              %p=  __('Мы открыты к диалогу! Спрашивайте!')
 
           #splash_images
             = html::image('/public/images/layouts/welcome/splash/big1.jpg', array('id' => 'big1'))
@@ -64,17 +61,17 @@
 
       #footer
         .links
-          = html::anchor('/', '"' . i18n::get("Мост в Китай") . '"')
+          = html::anchor('/', '"' . __("Мост в Китай") . '"')
           = '&nbsp;|&nbsp;'
-          = html::anchor('/', i18n::get('О нас'))
+          = html::anchor('/', __('О нас'))
           = '&nbsp;|&nbsp;'
-          = html::anchor('/', i18n::get('Контакты'))
+          = html::anchor('/', __('Контакты'))
           %br
           = '&copy;'
           = html::anchor('/', 'www.waytochina.org')
         .sections
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Образование в Китае, учеба в Китае')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Образование в Китае, учеба в Китае')))
           = '&nbsp;'
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Перевод с китайского')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Перевод с китайского')))
           = '&nbsp;'
-          = html::anchor('/', str_replace(' ', '&nbsp;', i18n::get('Бизнес в Китае')))
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Бизнес в Китае')))

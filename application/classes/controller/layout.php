@@ -14,11 +14,12 @@ class Controller_Layout extends Controller_Haml
 
         i18n::$lang = $this->language . '-' . $this->language; // Fake ISO culture
 
-        Breadcrumbs::add(Breadcrumb::factory()->set_title("«Мост в Китай»")
+        Breadcrumbs::add(Breadcrumb::factory()->set_title('«'.__("Мост в Китай").'»')
                                               ->set_url("/"));
 
         Haml::bind_global('top_menu',  $this->top_menu);
         Haml::bind_global('lang_menu', $this->lang_menu);
+        Haml::bind_global('lang',      $this->language);
 
         $this->top_menu  = Menu::factory('main');
         $this->lang_menu = Menu::factory('lang')->set_current("/set/language/$this->language");
@@ -28,7 +29,6 @@ class Controller_Layout extends Controller_Haml
  
     public function after()
     {
-        $this->view_data['lang'] = $this->template->lang = $this->language;
         parent::after();
     }
 }

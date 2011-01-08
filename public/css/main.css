@@ -13,6 +13,10 @@ body {
     font-size: 1.3em;
 }
 
+form span {
+    color: red;
+}
+
 p {
     line-height: 1.3;
     padding: 2px 0 10px;
@@ -80,7 +84,7 @@ a {
 #left_side .menu {
     margin-bottom: 40px;
     padding: 2px;
-    border: 1px solid blue;
+    border: 1px solid #2f629d;
 }
 
 #left_side .menu li {
@@ -376,3 +380,112 @@ h3 a{font-weight:normal;}
 .padl10 {padding-left:10px;}
 .padl5 {padding-left:5px;}
 
+
+/* ____________ RECALLS ______________ */
+
+table.recalls {
+    border: medium none;
+    font-size: 1em;
+    margin: 20px 0;
+    text-align: left;
+    width: 98%;
+}
+
+table.recalls input {
+    width: 250px;
+}
+table.recalls input[type="submit"] {
+    margin-top: 20px;
+    width: 260px;
+}
+
+/* _______________ JQUERY FORMS _________________ */
+
+/* pure CSS arrow */
+.error em {
+	display:block;
+	width:0;
+	height:0;
+	border:10px solid;
+	border-color:#FFFE36 transparent transparent;
+
+	/* positioning */
+	position:absolute;
+	bottom:-17px;
+	left:60px;
+}
+
+/* error message */
+.error {
+        margin-top: 6px;
+	height: 15px;
+	background-color: #FF3636;
+	font-size: 11px;
+	border: 1px solid #E1E16D;
+	padding: 4px 10px;
+	color: #000;
+	display: none;	
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;	
+	-webkit-border-bottom-left-radius:0; 
+	-webkit-border-top-left-radius:0;
+	
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;	
+}
+
+.error p {
+	margin:0;		
+}
+
+/* field label */
+label {
+	display:block;
+	font-size:11px;
+	color:#ccc;
+}
+
+#terms label {
+	float:left;
+}
+
+#terms input {
+	margin:0 5px;
+}
+
+input.invalid {
+    background-color: #FFEEEE;
+    border: 1px solid red;
+}
+
+
+/* __________________ MESSAGE ____________________ */
+
+
+/* message */
+.message {
+        color: #BBB;
+        font-size: 13px;
+        margin-top: 6px;
+	min-height:20px;
+	background-color:#FFFE36;
+	font-size:11px;
+	border:1px solid #E1E16D;
+	padding:10px 10px;
+	color:#000;
+	display:none;	
+        width: 100%;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;	
+	-webkit-border-bottom-left-radius:0; 
+	-webkit-border-top-left-radius:0;
+	
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;	
+}
