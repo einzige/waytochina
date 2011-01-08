@@ -8,7 +8,12 @@
       = form::label('section[title]', 'Заголовок: ')
       = form::input('section[title]', $section->title)
 
-    = html::editor('section[description]', $section->description)
+    %p
+      = form::label('section[description]', 'Описание раздела')
+      = html::editor('section[description]', $section->description)
+    %p
+      = form::label('section[contacts]', 'Контакты')
+      = html::editor('section[contacts]', $section->contacts)
 
     = form::submit('commit', 'сохранить')
   = form::close()

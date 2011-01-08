@@ -1,0 +1,69 @@
+!!! Strict
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "68b5960c88c25e8a", :name => "yandex-verification"}/
+    %title= isset($title) ? $title . ' | WayToChina.org' : 'WayToChina.org'
+
+    = html::style('public/css/main.css')
+    = html::style('public/css/weather.css')
+
+    = html::script('public/js/jquery.js')
+    = html::script('public/js/jquery.corner.js')
+    = html::script('http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js')
+    = html::script('public/js/jquery.form.js')
+
+    = html::script('public/js/main.js')
+
+  %body
+    #wrapper
+      #header 
+        .logo= html::anchor('/', '')
+        .languages
+          = $lang_menu->render()
+          = html::anchor('/', __('Контакты'))
+        .clear
+
+      .top_menu= $top_menu->render()
+
+      .top_banner
+        .left
+          %h1.#{$section->name}= __('Бизнес в Китае')
+        .right
+          = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
+      .clear
+
+      #content_wrapper
+        #breadcrumbs_wrapper
+          .breadcrumbs= Breadcrumbs::render()
+          .search
+            .yandexform{:onclick => "return {type: 3, logo: 'rb', arrow: true, webopt: false, websearch: false, bg: '#FFFFFF', fg: '#000000', fontsize: 12, suggest: true, site_suggest: true, encoding: ''}"}
+              %form{:action => "http://test.web-spider.ru/education/aboutus/search/", :method => "get"}
+                %input{:name => "searchid", :type => "hidden", :value => "247782"}/
+                %input{:name => "text"}/
+                %input{:type => "submit", :value => "\320\235\320\260\320\271\321\202\320\270"}/
+            %script{:charset => "utf-8", :src => "http://site.yandex.net/load/form/1/form.js", :type => "text/javascript"}
+          .clear
+        #left_side
+          .menu.#{$section->name}= $left_side_menu->render()
+        #right_side
+          %h3 here is right side
+        #content= $content
+        .clear
+
+      #footer
+        .links
+          = html::anchor('/', '"' . __("Мост в Китай") . '"')
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', __('О нас'))
+          = '&nbsp;|&nbsp;'
+          = html::anchor('/', __('Контакты'))
+          %br
+          = '&copy;'
+          = html::anchor('/', 'www.waytochina.org')
+        .sections
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Образование в Китае, учеба в Китае')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Перевод с китайского')))
+          = '&nbsp;'
+          = html::anchor('/', str_replace(' ', '&nbsp;', __('Бизнес в Китае')))

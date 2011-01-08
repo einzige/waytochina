@@ -13,6 +13,10 @@ body {
     font-size: 1.3em;
 }
 
+form span {
+    color: red;
+}
+
 p {
     line-height: 1.3;
     padding: 2px 0 10px;
@@ -28,11 +32,81 @@ a {
     margin: 20px auto 30px;
 }
 
-.logo a{
+#content_wrapper {
+    padding: 20px 0px 30px;
+}
+
+.logo a {
     width: 178px;
     height: 53px;
     background: url(/public/images/logo.jpg);
     float: left;
+}
+
+#breadcrumbs {
+    color: #B4B4B4;
+    font-size: 10px;
+    font-weight: bold;
+    float:left;
+    padding: 8px 0px 20px;
+}
+
+#breadcrumbs li {
+    float: left;
+    padding: 0 1px 0 2px;
+}
+
+#breadcrumbs li.slash {
+    font-size: 9px;
+}
+
+#breadcrumbs a {
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.search {
+    float: right;
+    text-align: right;
+    width: 180px;   
+}
+
+#right_side {
+    float: right;
+    width: 180px;
+}
+
+#left_side {
+    float: left;
+    width: 200px;
+}
+
+#left_side .menu {
+    margin-bottom: 40px;
+    padding: 2px;
+    border: 1px solid #2f629d;
+}
+
+#left_side .menu li {
+    padding: 3px 7px 0px;
+    height: 22px;
+    width: 180px;
+}
+
+#left_side .menu li.current a, #left_side .menu li:hover a {
+    text-decoration: none;
+    color: white;
+}
+
+#left_side .menu li a {
+    display: block;
+    padding: 1px 0px 0px 7px;
+    text-decoration: none;
+}
+
+#left_side .menu.business li.current, #left_side .menu.business li:hover {
+    background: url('/public/images/menu/left/blue.jpg');
+    color: white;
 }
 
 .clear{
@@ -43,14 +117,14 @@ a {
 
 /* __________ MENU __________ */
 
-ul.top_menu {
+.top_menu {
     padding-top: 20px;
     font-size: 1.1em;
     font-weight: bold;
     height: 45px;
 }
 
-ul.top_menu li a {
+.top_menu li a {
     padding-top: 13px;
     background: url("/public/images/menu/top_menu.png") no-repeat scroll right -45px transparent;
     color: #686766;
@@ -62,24 +136,24 @@ ul.top_menu li a {
     width: 200px;
 }
 
-ul.top_menu li a:hover {
+.top_menu li a:hover, .top_menu li.current a {
     background: url("/public/images/menu/top_menu.png") no-repeat scroll right -90px transparent;
     color: #FFF;
 }
 
-ul.top_menu li.last a {
+.top_menu li.last a {
     background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -45px transparent;
 }
-ul.top_menu li.first a {
+.top_menu li.first a {
     background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -45px transparent;
 }
 
-ul.top_menu li.first a:hover {
+.top_menu li.first a:hover, .top_menu li.current.first a {
     background: url("/public/images/menu/top_menu_first.png") no-repeat scroll right -90px transparent;
     color: white;
 }
 
-ul.top_menu li.last a:hover {
+.top_menu li.last a:hover, .top_menu li.current.last a {
     background: url("/public/images/menu/top_menu_last.png") no-repeat scroll right -90px transparent;
     color: white;
 }
@@ -102,13 +176,13 @@ div.languages ul {
     margin-right: 10px;
 }
 
-ul.languages {
+.languages {
     margin: 0px;
     padding: 0px;
     height: 19px;
 }
 
-ul.languages li {
+.languages li {
     display: block;
     float: left;
     height: 16px;
@@ -121,7 +195,7 @@ ul.languages li {
     width: 30px;
 }
 
-ul.languages li a {
+.languages li a {
     color: #0A48C5;
     display: block;
     float: left;
@@ -134,33 +208,37 @@ ul.languages li a {
     width: 30px
 }
 
-ul.languages li.ru {
+.languages li.active a {
+    color: black;
+}
+
+.languages li.ru {
     background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en {
+.languages li.en {
     background: url("/public/images/languages/en.jpg") no-repeat scroll left top transparent;
     width: 32px;
 }
 
-ul.languages li.cn {
+.languages li.cn {
     background: url("/public/images/languages/cn.jpg") no-repeat scroll left top transparent;
     width: 36px;
 }
 
-ul.languages li.ru:hover {
-    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+.languages li.ru:hover, .languages li.ru.active {
+    background: url("/public/images/languages/ru_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en:hover {
+.languages li.en:hover, .languages li.en.active {
     background: url("/public/images/languages/en_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.cn:hover {
+.languages li.cn:hover, .languages li.cn.active {
     background: url("/public/images/languages/cn_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages a:hover {
+.languages li a:hover {
     color: white;
 }
 
@@ -183,10 +261,20 @@ ul.languages a:hover {
     padding: 20px 0 0 20px;
 }
 
+.top_banner .left h1.business {
+    color: #2A629D;
+}
+
+.top_banner .left h1.education {
+    color: #9BBA06;
+}
+
 /* __________ CONTENT __________ */
 
 #content {
-    padding: 20px 0 30px;
+    padding: 0 20px;
+    width: 580px;
+    margin: 0px 0px 0px 200px;
 }
 
 /* __________ FOOTER __________ */
@@ -292,3 +380,139 @@ h3 a{font-weight:normal;}
 .padl10 {padding-left:10px;}
 .padl5 {padding-left:5px;}
 
+
+/* ____________ RECALLS ______________ */
+
+table.recalls {
+    border: medium none;
+    font-size: 1em;
+    margin: 20px 0;
+    text-align: left;
+    width: 98%;
+}
+
+table.recalls input {
+    width: 250px;
+}
+table.recalls input[type="submit"] {
+    margin-top: 20px;
+    width: 260px;
+}
+
+/* _______________ QUESTIONS _______________ */
+
+table.question {
+    border: medium none;
+    font-size: 1em;
+    margin: 20px 0;
+    text-align: left;
+    width: 98%;
+}
+
+table.question td {
+    border: medium none;
+    padding: 4px 3px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table.question input, table.question textarea {
+    font: 0.9em Tahoma,arial;
+    padding: 2px;
+    width: 250px;
+}
+
+table.question input[type="submit"] {
+    width: 260px;
+}
+
+/* _______________ JQUERY FORMS _________________ */
+
+/* pure CSS arrow */
+
+.error em {
+	display:block;
+	width:0;
+	height:0;
+	border:10px solid;
+	border-color:#FF6666 transparent transparent;
+
+	/* positioning */
+	position:absolute;
+	bottom:-17px;
+	left:60px;
+}
+
+/* error message */
+.error {
+	height: 15px;
+	background-color: #FF6666;
+	font-size: 11px;
+	border: 1px solid #E16666;
+	padding: 4px 10px;
+	color: #000;
+	display: none;	
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;	
+	-webkit-border-bottom-left-radius:0; 
+	-webkit-border-top-left-radius:0;
+	
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;	
+}
+
+.error p {
+	margin:0;		
+}
+
+/* field label */
+label {
+	display:block;
+	font-size:11px;
+	color:#ccc;
+}
+
+#terms label {
+	float:left;
+}
+
+#terms input {
+	margin:0 5px;
+}
+
+input.invalid, textarea.invalid {
+    background-color: #FFEEEE;
+    border: 1px solid red;
+}
+
+
+/* __________________ MESSAGE ____________________ */
+
+
+/* message */
+.message {
+        color: #BBB;
+        font-size: 13px;
+        margin-top: 6px;
+	min-height:20px;
+	background-color:#FFFE36;
+	font-size:11px;
+	border:1px solid #E1E16D;
+	padding:10px 10px;
+	color:#000;
+	display:none;	
+        width: 100%;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;	
+	-webkit-border-bottom-left-radius:0; 
+	-webkit-border-top-left-radius:0;
+	
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;	
+}

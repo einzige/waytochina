@@ -95,22 +95,22 @@ div.languages {
 
 div.languages a {
     float: right;
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 3px;
 }
 
 div.languages ul {
     float: left;
-    margin-right: 10px;
+    margin: 2px 10px 0 0;
 }
 
-ul.languages {
+.languages {
     margin: 0px;
     padding: 0px;
     height: 19px;
 }
 
-ul.languages li {
+.languages li {
     display: block;
     float: left;
     height: 16px;
@@ -123,7 +123,7 @@ ul.languages li {
     width: 30px;
 }
 
-ul.languages li a {
+.languages li a {
     color: #0A48C5;
     display: block;
     float: left;
@@ -136,33 +136,37 @@ ul.languages li a {
     width: 30px
 }
 
-ul.languages li.ru {
+.languages li.active a {
+    color: black;
+}
+
+.languages li.ru {
     background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en {
+.languages li.en {
     background: url("/public/images/languages/en.jpg") no-repeat scroll left top transparent;
     width: 32px;
 }
 
-ul.languages li.cn {
+.languages li.cn {
     background: url("/public/images/languages/cn.jpg") no-repeat scroll left top transparent;
     width: 36px;
 }
 
-ul.languages li.ru:hover {
-    background: url("/public/images/languages/ru.jpg") no-repeat scroll left top transparent;
+.languages li.ru:hover, .languages li.ru.active {
+    background: url("/public/images/languages/ru_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.en:hover {
+.languages li.en:hover, .languages li.en.active {
     background: url("/public/images/languages/en_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages li.cn:hover {
+.languages li.cn:hover, .languages li.cn.active {
     background: url("/public/images/languages/cn_active.jpg") no-repeat scroll left top transparent;
 }
 
-ul.languages a:hover {
+.languages li a:hover {
     color: white;
 }
 

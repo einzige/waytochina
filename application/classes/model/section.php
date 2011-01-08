@@ -31,4 +31,9 @@ class Model_Section extends ORM
     {
         return $this->where('lang', '=', "$lang");
     }
+
+    public function to_array()
+    {
+        return array('url' => "/$this->name", 'title' => $this->title);
+    }
 }

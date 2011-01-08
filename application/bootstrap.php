@@ -86,7 +86,10 @@ Kohana::modules(array(
          'pagination' => MODPATH.'pagination', // Paging of results
          'ckeditor'   => MODPATH.'ckeditor',
          'temp'       => MODPATH.'temp',
-         'phamlp'     => MODPATH.'phamlp'
+         'phamlp'     => MODPATH.'phamlp',
+         'menu'       => MODPATH.'menu',
+         'breadcrumbs'=> MODPATH.'breadcrumbs',
+         'captcha'    => MODPATH.'captcha',
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
@@ -119,14 +122,14 @@ Route::set('admin_business_pages',
 Route::set('admin_business', 
            '(<lang>/)admin/business(/<action>)')
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
 Route::set('admin_root', 
            '(<lang>/)admin', array('lang' => "({$langs_abr})"))
           ->defaults(array(
-                'directory'  => 'admin/sections',
+                'directory'  => 'admin/section',
                 'controller' => 'business',
                 'action'     => 'edit'));
 
@@ -136,6 +139,41 @@ Route::set('admin',
                 'directory'  => 'admin',
                 'controller' => 'business',
                 'action'     => 'edit'));
+
+Route::set('language', '(<lang>/)set/language/<another_lang>', array('lang'         => "({$langs_abr})",
+                                                                     'another_lang' => "({$langs_abr})"))
+        ->defaults(array(
+                'controller' => 'language',
+                'action'     => 'set'
+            ));
+
+Route::set('contacts', '(<lang>)(/)<section_name>/contacts', array('lang' => "({$langs_abr})", 'section_name' => '.+'))
+	->defaults(array(
+		'controller' => 'contacts',
+		'action'     => 'index',
+	));
+
+Route::set('section_questions', '(<lang>)(/)<section_name>/questions/<action>', array('lang' => "({$langs_abr})",
+                                                                              'section_name' => '(business|education|translation)'))
+	->defaults(array(
+		'controller' => 'questions',
+		'action'     => 'create',
+	));
+
+Route::set('sections_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
+                                                                   'section_name' => '(business|education|translation)',
+                                                                      'page_name' => '.+'))
+	->defaults(array(
+		'controller' => 'pages',
+		'action'     => 'show',
+	));
+
+Route::set('captcha', 'captcha/<group>', array('lang' => "({$langs_abr})",'group'=>'.+'))
+	->defaults(array(
+		'controller' => 'captcha',
+                'action'     => 'index',
+                'group'      => 'default',
+	));
 
 Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))
 	->defaults(array(

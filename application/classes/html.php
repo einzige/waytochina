@@ -56,7 +56,7 @@ class HTML extends Kohana_HTML {
     public static function editor($id = 'body', $value = '', $path = '')
     {        
             $path = "&currentFolder=$path";
-            $ckeditor = new Editor();
+            $ckeditor = new CKEditor();
             $ckeditor->basePath = '/public/js/ckeditor/';
             $ckeditor->config['filebrowserBrowseUrl']      = '/ckfinder/ckfinder.html';
             $ckeditor->config['filebrowserImageBrowseUrl'] = '/ckfinder/ckfinder.html?type=Images';
