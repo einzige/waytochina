@@ -36,6 +36,7 @@ class Controller_Contacts extends Controller_Layout {
         Haml::set_global('section',        $this->section);
         Haml::set_global('left_side_menu', $this->menu);
         Haml::set_global('question', ORM::factory('section_question'));
+        Haml::set_global('captcha', Captcha::instance('default'));
     }
 
     public function action_index()

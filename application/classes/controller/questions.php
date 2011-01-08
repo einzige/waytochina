@@ -24,7 +24,7 @@ class Controller_Questions extends Controller_Section_Base {
 
         $this->question = new Model_Section_Question();
 
-        if ($this->question->values($_POST['question'])->check())
+        if ($this->question->values($_POST['question'])->check() && Captcha::valid($_POST['captcha']))
         {
             $this->question->save();
             $this->request->redirect("/$this->section_name/questions/success");
@@ -32,6 +32,8 @@ class Controller_Questions extends Controller_Section_Base {
         else { 
             $this->add_errors(__('Вы неверно ввели символы с изображения'));
         }
+
+        Haml::set_global('captcha', Captcha::instance('default'));
         $this->template->content = Haml::factory('questions/new');
     }
 

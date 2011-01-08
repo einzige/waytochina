@@ -23,7 +23,7 @@
     %tr
       %td.captcha= __('Код проверки') . '<span>*</span>'
       %td
-        %br
+        = $captcha
         %br
         = form::input('captcha', '', array('required' => 'required'))
     %tr

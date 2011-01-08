@@ -25,3 +25,6 @@
 [submodule "modules/breadcrumbs"]
 	path = modules/breadcrumbs
 	url = git://github.com/kierangraham/breadcrumbs.git
+[submodule "modules/captcha"]
+	path = modules/captcha
+	url = git://github.com/kolanos/kohana-captcha.git
