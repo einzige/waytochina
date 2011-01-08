@@ -1,0 +1,32 @@
+:javascript
+  $(document).ready(function(){
+    $('#question_form').validator({ lang: '#{$lang}', position: 'right', offset: [24, 2] });
+  });
+
+= Haml::factory('messages')
+
+%h3#question_cut= __('Задайте свой вопрос здесь!')
+= form::open("$section->name/questions/create", array('id' => 'question_form'))
+  = form::hidden('question[section_id]', $section->id)
+  %table.question
+    %tr
+      %td= __('Имя') . '<span>*</span>'
+      %td= form::input('question[author]', $question->author, array('required' => 'required'))
+    %tr
+      %td
+        :plain
+          E-mail<span>*</span>
+      %td= form::input('question[email]', $question->email, array('required' => 'required'))
+    %tr
+      %td= __('Вопрос') . '<span>*</span>'
+      %td= form::textarea('question[text]', $question->text, array('required' => 'required', 'class' => 'question_field', 'cold' => 15, 'rows' => 5))
+    %tr
+      %td.captcha= __('Код проверки') . '<span>*</span>'
+      %td
+        %br
+        %br
+        = form::input('captcha', '', array('required' => 'required'))
+    %tr
+      %td
+      %td.but= form::submit('commit', __('Отправить'))
+= form::close()

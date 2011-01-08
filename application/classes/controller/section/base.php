@@ -29,8 +29,6 @@ class Controller_Section_Base extends Controller_Layout {
 
         $this->menu = Menu::factory($this->section->name)->with_pages($this->section);
 
-        Breadcrumbs::add(Breadcrumb::factory()->set_title($this->section->title));
-
         Haml::set_global('section',        $this->section);
         Haml::set_global('left_side_menu', $this->menu);
         Haml::set_global('pages',          $this->pages);
@@ -38,6 +36,8 @@ class Controller_Section_Base extends Controller_Layout {
 
     public function action_index()
     {
+        Breadcrumbs::add(Breadcrumb::factory()->set_title($this->section->title));
+
         $this->menu->set_current("/$this->section_name");
         $this->top_menu->set_current("/$this->section_name");
 

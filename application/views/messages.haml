@@ -1,0 +1,12 @@
+- if(isset($errors) && $errors)
+  .error_box
+    %ul
+      - foreach($errors as $error)
+        %li
+          .error{:style => 'display:block'}= $error
+- if(isset($messages) && $messages)
+  .message_box
+    %ul
+      - foreach($messages as $message)
+        %li
+          .message{:style => 'display:block'}= $message
