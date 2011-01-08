@@ -25,18 +25,22 @@ class Controller_Contacts extends Controller_Layout {
         }
 
         $this->menu = Menu::factory($this->section_name)->with_pages($this->section);
+        $this->menu->set_current("/$this->section_name/contacts");
 
-        Breadcrumbs::add(Breadcrumb::factory()->set_title($this->section->title));
+        $this->top_menu->set_current("/$this->section_name");
+
+        Breadcrumbs::add(Breadcrumb::factory()->set_url("/$this->section_name")
+                                              ->set_title($this->section->title));
+        Breadcrumbs::add(Breadcrumb::factory()->set_title(__('Контакты')));
 
         Haml::set_global('section',        $this->section);
         Haml::set_global('left_side_menu', $this->menu);
+        Haml::set_global('question', ORM::factory('section_question'));
+        Haml::set_global('captcha', Captcha::instance('default'));
     }
 
     public function action_index()
     {
-        $this->menu->set_current("/$this->section_name/contacts");
-        $this->top_menu->set_current("/$this->section_name");
-
         $this->template->title = __('Контакты') . ' | ' . $this->section->title;
     }
 

@@ -88,7 +88,8 @@ Kohana::modules(array(
          'temp'       => MODPATH.'temp',
          'phamlp'     => MODPATH.'phamlp',
          'menu'       => MODPATH.'menu',
-         'breadcrumbs'=> MODPATH.'breadcrumbs'
+         'breadcrumbs'=> MODPATH.'breadcrumbs',
+         'captcha'    => MODPATH.'captcha',
 
       // 'unittest'   => MODPATH.'unittest',   // Unit testing
       // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
@@ -152,12 +153,26 @@ Route::set('contacts', '(<lang>)(/)<section_name>/contacts', array('lang' => "({
 		'action'     => 'index',
 	));
 
+Route::set('section_questions', '(<lang>)(/)<section_name>/questions/<action>', array('lang' => "({$langs_abr})",
+                                                                              'section_name' => '(business|education|translation)'))
+	->defaults(array(
+		'controller' => 'questions',
+		'action'     => 'create',
+	));
+
 Route::set('sections_page', '(<lang>)(/)<section_name>/<page_name>', array('lang' => "({$langs_abr})",
                                                                    'section_name' => '(business|education|translation)',
                                                                       'page_name' => '.+'))
 	->defaults(array(
 		'controller' => 'pages',
 		'action'     => 'show',
+	));
+
+Route::set('captcha', 'captcha/<group>', array('lang' => "({$langs_abr})",'group'=>'.+'))
+	->defaults(array(
+		'controller' => 'captcha',
+                'action'     => 'index',
+                'group'      => 'default',
 	));
 
 Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('lang' => "({$langs_abr})",'id'=>'.+'))

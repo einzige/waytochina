@@ -399,15 +399,43 @@ table.recalls input[type="submit"] {
     width: 260px;
 }
 
+/* _______________ QUESTIONS _______________ */
+
+table.question {
+    border: medium none;
+    font-size: 1em;
+    margin: 20px 0;
+    text-align: left;
+    width: 98%;
+}
+
+table.question td {
+    border: medium none;
+    padding: 4px 3px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table.question input, table.question textarea {
+    font: 0.9em Tahoma,arial;
+    padding: 2px;
+    width: 250px;
+}
+
+table.question input[type="submit"] {
+    width: 260px;
+}
+
 /* _______________ JQUERY FORMS _________________ */
 
 /* pure CSS arrow */
+
 .error em {
 	display:block;
 	width:0;
 	height:0;
 	border:10px solid;
-	border-color:#FFFE36 transparent transparent;
+	border-color:#FF6666 transparent transparent;
 
 	/* positioning */
 	position:absolute;
@@ -417,11 +445,10 @@ table.recalls input[type="submit"] {
 
 /* error message */
 .error {
-        margin-top: 6px;
 	height: 15px;
-	background-color: #FF3636;
+	background-color: #FF6666;
 	font-size: 11px;
-	border: 1px solid #E1E16D;
+	border: 1px solid #E16666;
 	padding: 4px 10px;
 	color: #000;
 	display: none;	
@@ -456,7 +483,7 @@ label {
 	margin:0 5px;
 }
 
-input.invalid {
+input.invalid, textarea.invalid {
     background-color: #FFEEEE;
     border: 1px solid red;
 }

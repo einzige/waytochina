@@ -32,7 +32,9 @@ class Request extends Kohana_Request {
         /* get current language */
         $instance->lang = $instance->param('lang');
 
-        if (Request::$method == "POST") 
+        // FIXME: bad condition
+        //
+        if (Request::$method == "POST" OR $instance->controller == 'captcha') 
         {
             return $instance;
         }

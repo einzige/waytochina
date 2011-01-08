@@ -11,7 +11,6 @@ class Model_Section_Question extends ORM
         'section_id' => array('not_empty' => array()),
         'author'     => array('not_empty' => array()),
         'email'      => array('not_empty' => array()),
-        'content'    => array('not_empty' => array()),
     );
     protected $_filters = array
     (
