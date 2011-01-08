@@ -112,12 +112,40 @@ if( ! empty($langs_abr)) $langs_abr .= '|' . $lang_ignore;
  * defaults for the URI.
  */
 
+Route::set('admin_translation_pages', 
+           '<lang>/admin/translation/pages((/<id>)/<action>)', array('lang' => "({$langs_abr})",'id'=>'.+'))
+          ->defaults(array(
+                'directory'  => 'admin/translation',
+                'controller' => 'pages',
+                'action'     => 'index'));
+
+Route::set('admin_education_pages', 
+           '<lang>/admin/education/pages((/<id>)/<action>)', array('lang' => "({$langs_abr})",'id'=>'.+'))
+          ->defaults(array(
+                'directory'  => 'admin/education',
+                'controller' => 'pages',
+                'action'     => 'index'));
+
 Route::set('admin_business_pages', 
            '<lang>/admin/business/pages((/<id>)/<action>)', array('lang' => "({$langs_abr})",'id'=>'.+'))
           ->defaults(array(
                 'directory'  => 'admin/business',
                 'controller' => 'pages',
                 'action'     => 'index'));
+
+Route::set('admin_translation', 
+           '(<lang>/)admin/translation(/<action>)')
+          ->defaults(array(
+                'directory'  => 'admin/section',
+                'controller' => 'translation',
+                'action'     => 'edit'));
+
+Route::set('admin_education', 
+           '(<lang>/)admin/education(/<action>)')
+          ->defaults(array(
+                'directory'  => 'admin/section',
+                'controller' => 'education',
+                'action'     => 'edit'));
 
 Route::set('admin_business', 
            '(<lang>/)admin/business(/<action>)')

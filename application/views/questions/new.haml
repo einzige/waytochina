@@ -5,6 +5,12 @@
 
 = Haml::factory('messages')
 
+-# FIXME:
+- if( ! isset($question)) 
+  - $question = ORM::factory('section_question')
+- if( ! isset($captcha))
+  - $captcha = Captcha::instance('default')
+
 %h3#question_cut= __('Задайте свой вопрос здесь!')
 = form::open("$section->name/questions/create", array('id' => 'question_form'))
   = form::hidden('question[section_id]', $section->id)

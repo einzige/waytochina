@@ -84,7 +84,18 @@ a {
 #left_side .menu {
     margin-bottom: 40px;
     padding: 2px;
+}
+
+#left_side .menu.business {
     border: 1px solid #2f629d;
+}
+
+#left_side .menu.education {
+    border: 1px solid #B7E043;
+}
+
+#left_side .menu.translation {
+    border: 1px solid #C7365A;
 }
 
 #left_side .menu li {
@@ -106,6 +117,16 @@ a {
 
 #left_side .menu.business li.current, #left_side .menu.business li:hover {
     background: url('/public/images/menu/left/blue.jpg');
+    color: white;
+}
+
+#left_side .menu.education li.current, #left_side .menu.education li:hover {
+    background: url('/public/images/menu/left/green.jpg');
+    color: white;
+}
+
+#left_side .menu.translation li.current, #left_side .menu.translation li:hover {
+    background: url('/public/images/menu/left/red.jpg');
     color: white;
 }
 
@@ -267,6 +288,10 @@ div.languages ul {
 
 .top_banner .left h1.education {
     color: #9BBA06;
+}
+
+.top_banner .left h1.translation {
+    color: #9B2523;
 }
 
 /* __________ CONTENT __________ */

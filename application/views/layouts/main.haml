@@ -28,7 +28,7 @@
 
       .top_banner
         .left
-          %h1.#{$section->name}= __('Бизнес в Китае')
+          %h1.#{$section->name}= __($section->title)
         .right
           = html::anchor('/', html::image('/public/images/banner/banner.jpg'))
       .clear

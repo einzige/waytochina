@@ -1,0 +1,43 @@
+%h2= $section->title
+
+= html::toggler('#section_editor', 'Редактировать описание раздела')
+
+#section_editor{:style => 'display:none'}
+  = form::open()
+    %p
+      = form::label('section[title]', 'Заголовок: ')
+      = form::input('section[title]', $section->title)
+
+    %p
+      = form::label('section[description]', 'Описание раздела')
+      = html::editor('section[description]', $section->description)
+    %p
+      = form::label('section[contacts]', 'Контакты')
+      = html::editor('section[contacts]', $section->contacts)
+
+    = form::submit('commit', 'сохранить')
+  = form::close()
+
+-# ----------------------------------------------------------------------
+
+%h3 Страницы раздела
+
+= html::toggler('#page_creator', 'Добавить страницу в раздел')
+
+#page_creator{:style => 'display:none'}
+  = form::open("admin/$section->name/pages/create")
+    = form::hidden('page[section_id]', $section->id)
+    %table
+      %tr
+        %td= form::label('page[name]',  'Url-имя: ')
+        %td= form::input('page[name]')
+      %tr
+        %td= form::label('page[title]', 'Заголовок: ')
+        %td= form::input('page[title]')
+
+    = html::editor('page[content]')
+
+    = form::submit('commit', 'сохранить')
+  = form::close()
+.clear
+= Request::factory("admin/$section->name/pages")->execute()

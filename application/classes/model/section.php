@@ -27,6 +27,11 @@ class Model_Section extends ORM
         return $this->where('name', '=', 'education');
     }
 
+    public function translation()
+    {
+        return $this->where('name', '=', 'translation');
+    }
+
     public function lang($lang)
     {
         return $this->where('lang', '=', "$lang");

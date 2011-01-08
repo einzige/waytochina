@@ -18,10 +18,10 @@
     #menu
       %ul
         %li= html::anchor('/admin/business', 'Бизнес в Китае')
-        %li= html::anchor('/admin/business', 'Образование в Китае')
-        %li= html::anchor('/admin/business', 'Услуги перевода')
-        %li= html::anchor('/admin/business', 'Вопросы')
-        %li= html::anchor('/admin/business', 'Заявки')
+        %li= html::anchor('/admin/education', 'Образование в Китае')
+        %li= html::anchor('/admin/translation', 'Услуги перевода')
+        %li= html::anchor('/admin/questions', 'Вопросы')
+        %li= html::anchor('/admin/requests', 'Заявки')
       %p.lang= i18n::$lang
 
     - if(isset($errors) && $errors)
