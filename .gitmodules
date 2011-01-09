@@ -28,3 +28,6 @@
 [submodule "modules/captcha"]
 	path = modules/captcha
 	url = git://github.com/kolanos/kohana-captcha.git
+[submodule "modules/thumbler"]
+	path = modules/thumbler
+	url = git://github.com/homm/thumbler.git
